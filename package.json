@@ -1,0 +1,28 @@
+{
+  "name": "meanauthapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app",
+    "server": "nodemon app",
+    "client": "cd angular-src/src && ng serve",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "concurrently": "*",
+    "cors": "*",
+    "express": "*",
+    "mongoose": "*",
+    "multer": "*",
+    "jsonwebtoken": "*",
+    "passport": "*",
+    "passport-jwt": "*",
+    "python-shell": "*"
+  },
+  "author": "Andrew Robbertz",
+  "license": "MIT"
+}

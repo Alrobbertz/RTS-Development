@@ -1,0 +1,67 @@
+// EXTERNAL DEPENDENCIES
+const express = require("express");
+const path = require("path");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const passport = require("passport");
+const mongoose = require("mongoose");
+
+// LOCAL DEPENDENCIES
+const config = require("./server/config/database");
+const users = require("./server/routes/users");
+const sessions = require("./server/routes/sessions");
+const logs = require("./server/routes/logs");
+
+var app = express();
+const production = false; // TODO CHANGE TO TRUE FOR PRODUCTION
+var prod_port = process.env.PORT || 8080; // Port for Production Builds
+var dev_port = 3000; // Port for Development
+
+// SET STATIC FOLDER - Angular will compile to this folder using ng serve
+app.use(express.static(path.join(__dirname, "public")));
+
+// CORS MIDDLEWARE - Eliminates Proxying
+app.use(cors());
+
+// BODY PARSERPARSER
+app.use(bodyParser.json());
+
+// PASSPORT MIDDLEWARE
+app.use(passport.initialize());
+app.use(passport.session());
+require("./server/config/passport")(passport);
+
+// CONNECT TO MONGOOSE
+mongoose.connect(
+  config.database,
+  { useNewUrlParser: true }
+);
+mongoose.connection.on("connected", () => {
+  console.log("Connected to Database: " + config.database);
+});
+
+// MONGOOSE ERROR HANDLING/ SHOWING
+mongoose.connection.on("error", err => {
+  console.log("Database Error: " + err);
+});
+
+// API ROUTING
+app.use("/api/users", users);
+app.use("/api/sessions", sessions);
+app.use("/api/logs", logs);
+
+// Public Routing
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.html"));
+});
+
+// START SERVER
+if (production) {
+  app.listen(prod_port, () => {
+    console.log("Productuin Build Running on Port: " + prod_port);
+  });
+} else {
+  app.listen(dev_port, () => {
+    console.log("Development Build Running on Port: " + dev_port);
+  });
+}
