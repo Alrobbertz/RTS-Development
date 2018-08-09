@@ -44,12 +44,7 @@ export class EditSessionComponent implements OnInit {
     var updated_session = {
       name: this.model.name,
       record_date: this.model.record_date,
-      session_type: this.model.session_type,
-      ts: this.model.ts,
-      force_raw: this.model.force_raw,
-      force_adj: this.model.force_adj,
-      angle_raw: this.model.angle_raw,
-      angle_adj: this.model.angle_adj
+      session_type: this.model.session_type
     };
     this.dataService.updateSession(id, updated_session).subscribe(
       res => {

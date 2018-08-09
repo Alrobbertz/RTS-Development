@@ -48,24 +48,29 @@ router.post("/new", function(req, res) {
   });
 });
 
+// // UPLOAD NEW SESSION
+// router.post("/upload", function(req, res) {
+//   if (!req.files) {
+//     console.log("No file received");
+//     return res.send({ success: false });
+//   } else {
+//     console.log("File Received!");
+//     //console.log(req.files[0]);
+//     var session = req.body;
+//     var filename = req.files[0].filename;
+//     Session.uploadSession(session, filename);
+//     return res.send({ success: true });
+//   }
+// });
+
 // UPLOAD NEW SESSION
 router.post("/upload", function(req, res) {
-  if (!req.files) {
-    console.log("No file received");
-    return res.send({ success: false });
-  } else {
-    console.log("File Received!");
-    //console.log(req.files[0]);
-    var session = req.body;
-    var filename = req.files[0].filename;
-    Session.uploadSession(session, filename);
-    return res.send({ success: true });
-  }
+  console.log(req.body);
+  return res.send({ success: true });
 });
 
 // Update Session
 router.put("/update/:_id", function(req, res) {
-  console.log(req.body);
   var id = req.params._id;
   var session = req.body;
   Session.updateSession(id, session, {}, function(err, session) {

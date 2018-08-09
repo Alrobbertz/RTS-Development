@@ -20,7 +20,7 @@ export class AuthService {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
     return this.http
-      .post("/api/users/register", user, {
+      .post("http://localhost:3000/api/users/register", user, {
         headers: headers
       })
       .pipe(map(res => res.json()));
@@ -30,7 +30,7 @@ export class AuthService {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
     return this.http
-      .post("/api/users/authenticate", user, {
+      .post("http://localhost:3000/api/users/authenticate", user, {
         headers: headers
       })
       .pipe(map(res => res.json()));
@@ -42,7 +42,7 @@ export class AuthService {
     headers.append("Content-Type", "application/json");
     headers.append("Authorization", this.authToken);
     return this.http
-      .get("/api/users/profile", {
+      .get("http://localhost:3000/api/users/profile", {
         headers: headers
       })
       .pipe(map(res => res.json()));

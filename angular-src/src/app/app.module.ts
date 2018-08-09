@@ -17,6 +17,7 @@ import { AboutComponent } from "./components/about/about.component";
 import { AllSessionsComponent } from "./components/all-sessions/all-sessions.component";
 import { EditSessionComponent } from "./components/edit-session/edit-session.component";
 import { SessionDetailsComponent } from "./components/session-details/session-details.component";
+import { UploadSessionComponent } from "./components/upload-session/upload-session.component";
 
 // SERVICES
 import { ValidateService } from "./services/validate.service";
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
   { path: "about", component: AboutComponent },
   { path: "sessions", component: AllSessionsComponent },
   { path: "sessions/details/:_id", component: SessionDetailsComponent },
-  { path: "sessions/edit/:_id", component: EditSessionComponent }
+  { path: "sessions/edit/:_id", component: EditSessionComponent },
+  { path: "sessions/upload", component: UploadSessionComponent }
 ];
 
 @NgModule({
@@ -57,7 +59,8 @@ const appRoutes: Routes = [
     AboutComponent,
     AllSessionsComponent,
     EditSessionComponent,
-    SessionDetailsComponent
+    SessionDetailsComponent,
+    UploadSessionComponent
   ],
   imports: [
     BrowserModule,

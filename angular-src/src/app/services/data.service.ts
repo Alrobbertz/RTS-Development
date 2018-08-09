@@ -15,7 +15,7 @@ export class DataService {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
     return this.http
-      .get("/api/sessions/all", { headers: headers })
+      .get("http://localhost:3000/api/sessions/all", { headers: headers })
       .pipe(map(res => res.json()));
   }
 
@@ -23,17 +23,27 @@ export class DataService {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
     return this.http
-      .get("/api/sessions/details/" + _id, {
+      .get("http://localhost:3000/api/sessions/details/" + _id, {
         headers: headers
       })
       .pipe(map(res => res.json()));
   }
 
-  updateSession(_id: String, session: Session) {
+  updateSession(_id: String, session) {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
     return this.http
-      .put("/api/sessions/update/" + _id, session, {
+      .put("http://localhost:3000/api/sessions/update/" + _id, session, {
+        headers: headers
+      })
+      .pipe(map(res => res.json()));
+  }
+
+  uploadSession(session) {
+    let headers = new Headers();
+    headers.append("Content-Type", "application/json");
+    return this.http
+      .post("http://localhost:3000/api/sessions/upload", session, {
         headers: headers
       })
       .pipe(map(res => res.json()));
@@ -43,7 +53,7 @@ export class DataService {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
     return this.http
-      .put("/api/sessions/delete/" + _id, {
+      .delete("http://localhost:3000/api/sessions/delete/" + _id, {
         headers: headers
       })
       .pipe(map(res => res.json()));

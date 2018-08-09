@@ -18,7 +18,7 @@ import "node_modules/hammerjs/hammer.min.js";
   styleUrls: ["./session-details.component.css"]
 })
 export class SessionDetailsComponent implements OnInit {
-  session: Session; // TODO call new Session and actually write a default constructor for it *********************
+  session: Session = new Session("", "", "", [], [], [], [], []); // TODO call new Session and actually write a default constructor for it *********************
   public lineChartLegend: boolean = true;
   public lineChartType: string = "line";
   public lineChartLabels: Array<any>;
@@ -153,7 +153,14 @@ export class SessionDetailsComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get("_id");
     this.dataService.getSessionDetails(id).subscribe((data: Session) => {
       this.session = data;
-      console.log(this.session);
+      this.setChart();
+    });
+  }
+
+  deleteSession() {
+    const id = this.route.snapshot.paramMap.get("_id");
+    this.dataService.deleteSession(id).subscribe(res => {
+      console.log(res);
     });
   }
 
