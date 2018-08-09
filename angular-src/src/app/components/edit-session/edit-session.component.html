@@ -1,0 +1,47 @@
+<div [hidden]="submitted">
+  <h1>Edit Session Form</h1>
+  <form (ngSubmit)="onSubmit()" #editSessionForm="ngForm">
+    <div class="form-group">
+      <label for="name">SessionName</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name" #name="ngModel">
+      <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+        Name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="record_date">Date Recorded</label>
+      <input type="text" class="form-control" id="record_date" [(ngModel)]="model.record_date" name="record_date">
+    </div>
+
+    <div class="form-group">
+      <label for="session_type">Session Type</label>
+      <select class="form-control" id="session_type" required [(ngModel)]="model.session_type" name="session_type">
+        <option *ngFor="let opt of session_type_options" [value]="opt">{{opt}}</option>
+      </select>
+    </div>
+
+    <button type="button" class="btn btn-default" (click)="clearInput(); editSessionForm.reset()">Clear</button>
+    <button type="submit" class="btn btn-success" [disabled]="!editSessionForm.form.valid">Submit</button>
+
+  </form>
+</div>
+<div [hidden]="!submitted">
+  <h2>You submitted the following:</h2>
+  <div class="row">
+    <div class="col-md-3">Name</div>
+    <div class="col-md-9  pull-left">{{ model.name }}</div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">Date Recorded</div>
+    <div class="col-md-9 pull-left">{{ model.record_date }}</div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">Session Type</div>
+    <div class="col-md-9 pull-left">{{ model.session_type}}</div>
+  </div>
+  <br>
+  <button class="btn btn-primary" (click)="submitted=false">Edit Again</button>
+  <a href="sessions">View All Sessions</a>
+
+</div>

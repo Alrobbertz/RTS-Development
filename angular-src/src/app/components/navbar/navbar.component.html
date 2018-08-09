@@ -4,8 +4,11 @@
       <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true }">
         <a class="nav-link" [routerLink]="['/']">Home</a>
       </li>
+      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true }">
+        <a class="nav-link" [routerLink]="['/about']">About</a>
+      </li>
       <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true }">
-        <a class="nav-link" [routerLink]="['/profile']">Profile</a>
+        <a class="nav-link" [routerLink]="['/sessions']">View Data</a>
       </li>
       <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true }">
         <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
@@ -13,7 +16,7 @@
     </ul>
   </div>
   <div class="mx-auto order-0">
-    <a class="navbar-brand mx-auto" [routerLink]="['/']">Simple MEAN Authentication</a>
+    <a class="navbar-brand mx-auto" [routerLink]="['/']">Rowing Telemetry Systems</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -25,6 +28,9 @@
       </li>
       <li class="nav-item" *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
         <a class="nav-link" [routerLink]="['/register']">Register</a>
+      </li>
+      <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true }">
+        <a class="nav-link" [routerLink]="['/profile']">Profile</a>
       </li>
       <li class="nav-item" *ngIf="authService.loggedIn()">
         <a class="nav-link" (click)="onLogoutClick()" href="#">Logout</a>

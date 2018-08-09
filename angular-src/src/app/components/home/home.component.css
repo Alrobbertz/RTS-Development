@@ -1,0 +1,9 @@
+.jumbotron-custom {
+  background-image: url("../../../img/bg.jpg");
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+}

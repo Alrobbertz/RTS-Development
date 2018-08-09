@@ -1,9 +1,12 @@
-<div class="jumbotron text-center">
-  <h1>MEAN Authentication</h1>
-  <p class="lead">A simple MEAN stack application to demonstrate page authentication through tokens</p>
-  <div>
+<div class="jumbotron jumbotron-custom text-center">
+  <h1>RTS Development App</h1>
+  <p class="lead">An investigation into the feasibility and practicality of low-cost oarlock instrumentation.</p>
+  <div *ngIf="!authService.loggedIn()">
     <a class="btn btn-info" [routerLink]="['/register']">Register</a>
     <a class="btn btn-primary" [routerLink]="['/login']">Login </a>
+  </div>
+  <div *ngIf="authService.loggedIn()">
+    <a class="btn btn-primary btn-lg" [routerLink]="['/sessions']">View Data</a>
   </div>
 </div>
 <div class="container">

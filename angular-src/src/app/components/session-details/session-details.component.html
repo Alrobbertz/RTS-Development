@@ -1,0 +1,32 @@
+<a class="btn btn-info" href="sessions">Go Back</a>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title">{{session.name}}</h1>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Date Recorded: {{session.record_date}}</h3>
+        <h5>Type of Recording: {{session.session_type}}</h5>
+        <!-- TODO Try unsng square brackets to stop loading data before it gets here -->
+        <div class="row">
+          <div class="col-md-12">
+            <div style="display: block;">
+              <canvas baseChart width="600" height="400" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+                [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)">
+              </canvas>
+            </div>
+          </div>
+          <div class="col-md-12" style="margin-bottom: 10px">
+            <button class="btn btn-primary" (click)="setChart()">CLICK TO LOAD DATA</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="pull-right">
+  <a class="btn btn-info" href="sessions/edit/{{session._id}}">Edit Details</a> |
+  <a class="btn btn-danger" href="sessions" ng-click="removeSession(session._id)">Delete Session</a>
+</div>

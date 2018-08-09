@@ -1,0 +1,20 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title"> View Recorded Sessions</h1>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div *ngFor="let session of sessions">
+        <!-- Repeated for Each Session -->
+        <div class="col-md-12">
+
+          <h3>{{session.name}}</h3>
+          <h5>Recorded: {{session.record_date}}</h5>
+          <p>Type: {{session.session_type}}</p>
+          <a class="btn btn-primary" href="sessions/details/{{session._id}}">View Details</a>
+          <!--  TODO NEED TO CHANGE THE href to angular-friendly routing -->
+
+        </div>
+      </div>
+    </div>
+  </div>
