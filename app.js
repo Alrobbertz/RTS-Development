@@ -13,7 +13,7 @@ const sessions = require("./server/routes/sessions");
 const logs = require("./server/routes/logs");
 
 var app = express();
-const production = false; // TODO CHANGE TO TRUE FOR PRODUCTION
+const production = true; // TODO CHANGE TO TRUE FOR PRODUCTION
 var prod_port = process.env.PORT || 8080; // Port for Production Builds
 var dev_port = 3000; // Port for Development
 
@@ -57,12 +57,6 @@ app.get("*", (req, res) => {
 });
 
 // START SERVER
-if (production) {
-  app.listen(prod_port, () => {
-    console.log("Productuin Build Running on Port: " + prod_port);
-  });
-} else {
-  app.listen(dev_port, () => {
-    console.log("Development Build Running on Port: " + dev_port);
-  });
-}
+app.listen(prod_port, () => {
+  console.log("Productuin Build Running on Port: " + prod_port);
+});
