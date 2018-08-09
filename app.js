@@ -57,12 +57,6 @@ app.get("*", (req, res) => {
 });
 
 // START SERVER
-if (production) {
-  app.listen(prod_port, () => {
-    console.log("Productuin Build Running on Port: " + prod_port);
-  });
-} else {
-  app.listen(dev_port, () => {
-    console.log("Development Build Running on Port: " + dev_port);
-  });
-}
+app.listen(prod_port, () => {
+  console.log("Productuin Build Running on Port: " + prod_port);
+});
