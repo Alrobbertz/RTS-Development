@@ -62,7 +62,7 @@ export class RegisterComponent implements OnInit {
     this.authService.registerUser(user).subscribe(data => {
       if (data.success) {
         this.ngFlashMessageService.showFlashMessage({
-          messages: ["You are now registered!"],
+          messages: ["You are now registered! Login Now!"],
           dismissible: true,
           timeout: 3000,
           type: "success"

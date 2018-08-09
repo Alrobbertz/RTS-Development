@@ -59,20 +59,32 @@ module.exports.uploadSession = function(session, filename, callback) {
 };
 
 // Update Session
-module.exports.updateSession = (id, session, options, callback) => {
+module.exports.updateSession = function(id, session, options, callback) {
   console.log(session);
+  var query = { _id: id };
+  var update = {
+    name: session.name,
+    record_date: session.record_date,
+    session_type: session.session_type
+  };
 
-  // var query = { session_id: id };
-  // var update = {
-  //   name: session.name,
-  //   record_date: session.record_date,
-  //   ts: session.ts,
-  //   force_raw: session.force_raw,
-  //   angle_raw: session.angle_raw,
-  //   force_adj: session.force_adj,
-  //   angle_adj: session.angle_adj
-  // };
-  // Session.findOneAndUpdate(query, update, options, callback);
+  if (session.ts) {
+    update.ts = session.ts;
+  }
+  if (session.force_raw) {
+    update.force_raw = session.force_raw;
+  }
+  if (session.force_adj) {
+    update.force_adj = session.force_adj;
+  }
+  if (session.angle_raw) {
+    update.angle_raw = session.angle_raw;
+  }
+  if (session.angle_adj) {
+    update.angle_adj = session.angle_adj;
+  }
+
+  Session.findOneAndUpdate(query, update, options, callback);
 };
 
 // Delete Session

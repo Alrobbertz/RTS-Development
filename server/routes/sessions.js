@@ -63,45 +63,20 @@ router.post("/upload", function(req, res) {
   }
 });
 
-router.put("/sessions/:_id", function(req, res, next) {
-  console.log(req.payload);
+// Update Session
+router.put("/update/:_id", function(req, res) {
+  console.log(req.body);
   var id = req.params._id;
-  var session = req.payload;
+  var session = req.body;
   Session.updateSession(id, session, {}, function(err, session) {
     if (err) {
       throw err;
     }
-    res.json(response);
+    res.json(session);
   });
 });
 
-router.put("/sessions/:_id", function(req, res, next) {
-  console.log(req.body);
-  var session = req.body;
-  var updated_session = {};
-
-  if (session.name) {
-    updated_session.name = session.name;
-  }
-
-  if (session.record_date) {
-    updated_session.record_date = session.record_date;
-  }
-
-  if (!updated_session) {
-    res.status(400);
-    res.json({ error: "Bad Data" });
-  } else {
-    Session.updateSession(id, session, {}, function(err, session) {
-      if (err) {
-        res.send(err);
-      }
-      res.json(session);
-    });
-  }
-});
-
-router.delete("/sessions/:_id", function(req, res) {
+router.delete("/delete/:_id", function(req, res) {
   var id = req.params._id;
   Session.deleteSession(id, function(err, session) {
     if (err) {
