@@ -1806,7 +1806,7 @@ var AuthService = /** @class */ (function () {
     function AuthService(http, jwtHelper) {
         this.http = http;
         this.jwtHelper = jwtHelper;
-        this.production = false;
+        this.production = true;
         this.baseURL = "";
         if (this.production) {
             this.baseURL = "";
@@ -1906,19 +1906,27 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
+        this.production = true;
+        this.baseURL = "";
+        if (this.production) {
+            this.baseURL = "";
+        }
+        else {
+            this.baseURL = "http://localhost:3000";
+        }
     }
     DataService.prototype.getAllSessions = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append("Content-Type", "application/json");
         return this.http
-            .get("http://localhost:3000/api/sessions/all", { headers: headers })
+            .get(this.baseURL + "/api/sessions/all", { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     DataService.prototype.getSessionDetails = function (_id) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append("Content-Type", "application/json");
         return this.http
-            .get("http://localhost:3000/api/sessions/details/" + _id, {
+            .get(this.baseURL + "/api/sessions/details/" + _id, {
             headers: headers
         })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
@@ -1927,21 +1935,21 @@ var DataService = /** @class */ (function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append("Content-Type", "application/json");
         return this.http
-            .put("http://localhost:3000/api/sessions/update/" + _id, session, {
+            .put(this.baseURL + "/api/sessions/update/" + _id, session, {
             headers: headers
         })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     DataService.prototype.uploadSession = function (session) {
         return this.http
-            .post("http://localhost:3000/api/sessions/upload", session)
+            .post(this.baseURL + "/api/sessions/upload", session)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     DataService.prototype.deleteSession = function (_id) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append("Content-Type", "application/json");
         return this.http
-            .delete("http://localhost:3000/api/sessions/delete/" + _id, {
+            .delete(this.baseURL + "/api/sessions/delete/" + _id, {
             headers: headers
         })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));

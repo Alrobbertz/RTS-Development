@@ -9,13 +9,22 @@ import { Session } from "../entity/Session";
   providedIn: "root"
 })
 export class DataService {
-  constructor(private http: Http) {}
+  production = true;
+  baseURL = "";
+
+  constructor(private http: Http) {
+    if (this.production) {
+      this.baseURL = "";
+    } else {
+      this.baseURL = "http://localhost:3000";
+    }
+  }
 
   getAllSessions() {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
     return this.http
-      .get("http://localhost:3000/api/sessions/all", { headers: headers })
+      .get(this.baseURL + "/api/sessions/all", { headers: headers })
       .pipe(map(res => res.json()));
   }
 
@@ -23,7 +32,7 @@ export class DataService {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
     return this.http
-      .get("http://localhost:3000/api/sessions/details/" + _id, {
+      .get(this.baseURL + "/api/sessions/details/" + _id, {
         headers: headers
       })
       .pipe(map(res => res.json()));
@@ -33,7 +42,7 @@ export class DataService {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
     return this.http
-      .put("http://localhost:3000/api/sessions/update/" + _id, session, {
+      .put(this.baseURL + "/api/sessions/update/" + _id, session, {
         headers: headers
       })
       .pipe(map(res => res.json()));
@@ -41,7 +50,7 @@ export class DataService {
 
   uploadSession(session) {
     return this.http
-      .post("http://localhost:3000/api/sessions/upload", session)
+      .post(this.baseURL + "/api/sessions/upload", session)
       .pipe(map(res => res.json()));
   }
 
@@ -49,7 +58,7 @@ export class DataService {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
     return this.http
-      .delete("http://localhost:3000/api/sessions/delete/" + _id, {
+      .delete(this.baseURL + "/api/sessions/delete/" + _id, {
         headers: headers
       })
       .pipe(map(res => res.json()));
