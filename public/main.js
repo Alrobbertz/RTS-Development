@@ -967,7 +967,7 @@ var LoginComponent = /** @class */ (function () {
                     timeout: 5000,
                     type: "success"
                 });
-                _this.router.navigate(["/"]);
+                _this.router.navigateByUrl("/");
             }
             else {
                 _this.ngFlashMessageService.showFlashMessage({
@@ -976,7 +976,7 @@ var LoginComponent = /** @class */ (function () {
                     timeout: 5000,
                     type: "danger"
                 });
-                _this.router.navigate(["/login"]);
+                _this.router.navigateByUrl("/login");
             }
         });
     };
@@ -1066,7 +1066,7 @@ var NavbarComponent = /** @class */ (function () {
             timeout: 3000,
             type: "info"
         });
-        this.router.navigate(["/"]);
+        this.router.navigateByUrl("/");
         return false;
     };
     NavbarComponent = __decorate([
@@ -1272,7 +1272,7 @@ var RegisterComponent = /** @class */ (function () {
                     timeout: 3000,
                     type: "success"
                 });
-                _this.router.navigate(["/login"]);
+                _this.router.navigateByUrl("/login");
             }
             else {
                 _this.ngFlashMessageService.showFlashMessage({
@@ -1281,7 +1281,7 @@ var RegisterComponent = /** @class */ (function () {
                     timeout: 3000,
                     type: "danger"
                 });
-                _this.router.navigate(["/register"]);
+                _this.router.navigateByUrl("/register");
             }
         });
     };

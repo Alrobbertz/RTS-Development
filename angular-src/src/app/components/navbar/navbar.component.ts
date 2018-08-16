@@ -28,7 +28,7 @@ export class NavbarComponent implements OnInit {
       timeout: 3000,
       type: "info"
     });
-    this.router.navigate(["/"]);
+    this.router.navigateByUrl("/");
     return false;
   }
 }

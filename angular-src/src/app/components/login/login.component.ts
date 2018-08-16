@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
           timeout: 5000,
           type: "success"
         });
-        this.router.navigate(["/"]);
+        this.router.navigateByUrl("/");
       } else {
         this.ngFlashMessageService.showFlashMessage({
           messages: [data.message],
@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
           timeout: 5000,
           type: "danger"
         });
-        this.router.navigate(["/login"]);
+        this.router.navigateByUrl("/login");
       }
     });
   }

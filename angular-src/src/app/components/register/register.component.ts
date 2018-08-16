@@ -67,7 +67,7 @@ export class RegisterComponent implements OnInit {
           timeout: 3000,
           type: "success"
         });
-        this.router.navigate(["/login"]);
+        this.router.navigateByUrl("/login");
       } else {
         this.ngFlashMessageService.showFlashMessage({
           messages: ["Oops, Something Went Wrong"],
@@ -75,7 +75,7 @@ export class RegisterComponent implements OnInit {
           timeout: 3000,
           type: "danger"
         });
-        this.router.navigate(["/register"]);
+        this.router.navigateByUrl("/register");
       }
     });
   }
