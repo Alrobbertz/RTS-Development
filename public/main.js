@@ -310,7 +310,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".main-view {\n  background-color: rgb(118, 118, 118);\n  opacity: 0.6;\n  height: 100%;\n  width: 100%;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: cover;\n}\n\nfooter {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 120px; /* Set the fixed height of the footer here */\n  line-height: 30px; /* Vertically center the text there */\n  background-color: #4a4a4a;\n}\n\nh3 {\n  padding-top: 20px;\n}\n\n.icons {\n  padding: 0.4rem;\n}\n\n.icons a:hover {\n  color: #fff;\n}\n"
+module.exports = "footer {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 120px; /* Set the fixed height of the footer here */\n  line-height: 30px; /* Vertically center the text there */\n  background-color: #4a4a4a;\n}\n\nh3 {\n  padding-top: 20px;\n}\n\na .icons {\n  padding: 0.4rem;\n}\n\n.icons a:hover {\n  color: #fff;\n}\n\nmain {\n  padding: 4rem;\n  min-height: calc(100vh - 120px);\n}\n\nmain .icons {\n  margin-top: 1rem;\n}\n\nmain .icons a {\n  padding: 0.4rem;\n}\n\nmain .icons a:hover {\n  color: #eece1a;\n  transition: all 0.5s ease-out;\n}\n\nmain#home {\n  overflow: hidden;\n}\n\nmain#home h1 {\n  margin-top: 20vh;\n}\n"
 
 /***/ }),
 
@@ -321,7 +321,7 @@ module.exports = ".main-view {\n  background-color: rgb(118, 118, 118);\n  opaci
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar> </app-navbar>\n\n<div class=\"contaner main-view\">\n  <ng-flash-message></ng-flash-message>\n  <div class=\"container app-view\">\n    <router-outlet></router-outlet>\n  </div>\n\n  <footer>\n    <div class=\"container\">\n      <div class=\"text-center\">\n        <div class=\"icons\">\n          <h3>Find This Project on Githib</h3>\n          <a href=\"https://github.com/Alrobbertz/RTS-Development\">\n            <i class=\"fab fa-github fa-3x\"></i>\n          </a>\n        </div>\n      </div>\n    </div>\n  </footer>\n</div>"
+module.exports = "<app-navbar> </app-navbar>\n\n<main>\n  <ng-flash-message></ng-flash-message>\n  <div class=\"container app-view\">\n    <router-outlet></router-outlet>\n  </div>\n</main>\n\n\n<footer>\n  <div class=\"container\">\n    <div class=\"text-center\">\n      <div class=\"icons\">\n        <h3>Find This Project on Githib</h3>\n        <a href=\"https://github.com/Alrobbertz/RTS-Development\">\n          <i class=\"fab fa-github fa-3x\"></i>\n        </a>\n      </div>\n    </div>\n  </div>\n</footer>"
 
 /***/ }),
 
@@ -1311,7 +1311,7 @@ var RegisterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".panel {\n  background: #c2c2c2;\n  padding: 0.5 rem;\n  border: #555555 2px solid;\n}\n\n.options {\n  padding: 1rem;\n}\n"
 
 /***/ }),
 
@@ -1322,7 +1322,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<a class=\"btn btn-info\" href=\"sessions\">Go Back</a>\n<div class=\"panel panel-default\">\n  <div class=\"panel-heading\">\n    <h1 class=\"panel-title\">{{session.name}}</h1>\n  </div>\n  <div class=\"panel-body\">\n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <h3>Date Recorded: {{session.record_date}}</h3>\n        <h5>Type of Recording: {{session.session_type}}</h5>\n        <!-- TODO Try unsng square brackets to stop loading data before it gets here -->\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <div style=\"display: block;\">\n              <canvas baseChart width=\"600\" height=\"400\" [datasets]=\"lineChartData\" [labels]=\"lineChartLabels\" [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\" [legend]=\"lineChartLegend\" [chartType]=\"lineChartType\" (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\">\n              </canvas>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"pull-right\">\n  <a class=\"btn btn-warning\" href=\"sessions/edit/{{session._id}}\">Edit Details</a> |\n  <a class=\"btn btn-danger\" (click)=\"this.deleteSession()\">Delete Session</a>\n</div>"
+module.exports = "<a class=\"btn btn-info\" href=\"sessions\">Go Back</a>\n<div class=\"panel panel-default\">\n  <div class=\"panel-heading\">\n    <h1 class=\"panel-title\">{{session.name}}</h1>\n  </div>\n  <div class=\"panel-body\">\n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <h3>Date Recorded: {{session.record_date}}</h3>\n        <h5>Type of Recording: {{session.session_type}}</h5>\n        <!-- TODO Try unsng square brackets to stop loading data before it gets here -->\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <div style=\"display: block;\">\n              <canvas baseChart width=\"600\" height=\"400\" [datasets]=\"lineChartData\" [labels]=\"lineChartLabels\" [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\" [legend]=\"lineChartLegend\" [chartType]=\"lineChartType\" (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\">\n              </canvas>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"pull-right options\">\n  <a class=\"btn btn-warning\" href=\"sessions/edit/{{session._id}}\">Edit Details</a> |\n  <a class=\"btn btn-danger\" (click)=\"this.deleteSession()\">Delete Session</a>\n</div>"
 
 /***/ }),
 
@@ -1807,7 +1807,7 @@ var AuthService = /** @class */ (function () {
     function AuthService(http, jwtHelper) {
         this.http = http;
         this.jwtHelper = jwtHelper;
-        this.production = false;
+        this.production = true;
         this.baseURL = "";
         if (this.production) {
             this.baseURL = "";
@@ -1907,7 +1907,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
-        this.production = false;
+        this.production = true;
         this.baseURL = "";
         if (this.production) {
             this.baseURL = "";
