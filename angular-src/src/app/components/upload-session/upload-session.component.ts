@@ -72,13 +72,12 @@ export class UploadSessionComponent implements OnInit {
       res => {
         console.log(res); // Need to do something more meaningful with this later
       },
-      err => console.error(err)
+      err => console.error(err),
+      () => {
+        console.log("Done Sending File");
+        this.loading = false;
+      }
     );
-
-    setTimeout(() => {
-      console.log("Done Sending File");
-      this.loading = false;
-    }, 1000);
   }
 
   clearFile() {

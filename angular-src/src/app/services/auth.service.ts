@@ -14,13 +14,22 @@ export class AuthService {
   authToken: any;
   user: any;
 
-  constructor(private http: Http, public jwtHelper: JwtHelperService) {}
+  production = false;
+  baseURL = "";
+
+  constructor(private http: Http, public jwtHelper: JwtHelperService) {
+    if (this.production) {
+      this.baseURL = "";
+    } else {
+      this.baseURL = "http://localhost:3000";
+    }
+  }
 
   registerUser(user) {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
     return this.http
-      .post("http://localhost:3000/api/users/register", user, {
+      .post(this.baseURL + "/api/users/register", user, {
         headers: headers
       })
       .pipe(map(res => res.json()));
@@ -30,7 +39,7 @@ export class AuthService {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
     return this.http
-      .post("http://localhost:3000/api/users/authenticate", user, {
+      .post(this.baseURL + "/api/users/authenticate", user, {
         headers: headers
       })
       .pipe(map(res => res.json()));
@@ -42,7 +51,7 @@ export class AuthService {
     headers.append("Content-Type", "application/json");
     headers.append("Authorization", this.authToken);
     return this.http
-      .get("http://localhost:3000/api/users/profile", {
+      .get(this.baseURL + "/api/users/profile", {
         headers: headers
       })
       .pipe(map(res => res.json()));

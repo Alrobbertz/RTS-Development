@@ -388,15 +388,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_all_sessions_all_sessions_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/all-sessions/all-sessions.component */ "./src/app/components/all-sessions/all-sessions.component.ts");
 /* harmony import */ var _components_edit_session_edit_session_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/edit-session/edit-session.component */ "./src/app/components/edit-session/edit-session.component.ts");
 /* harmony import */ var _components_session_details_session_details_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/session-details/session-details.component */ "./src/app/components/session-details/session-details.component.ts");
-/* harmony import */ var _services_validate_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./services/validate.service */ "./src/app/services/validate.service.ts");
-/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./services/auth.service */ "./src/app/services/auth.service.ts");
-/* harmony import */ var _services_data_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./services/data.service */ "./src/app/services/data.service.ts");
-/* harmony import */ var _guards_auth_guard__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./guards/auth.guard */ "./src/app/guards/auth.guard.ts");
-/* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ng-flash-messages */ "./node_modules/ng-flash-messages/ng-flash-messages.umd.js");
-/* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(ng_flash_messages__WEBPACK_IMPORTED_MODULE_20__);
-/* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @auth0/angular-jwt */ "./node_modules/@auth0/angular-jwt/index.js");
-/* harmony import */ var ng2_charts__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ng2-charts */ "./node_modules/ng2-charts/index.js");
-/* harmony import */ var ng2_charts__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(ng2_charts__WEBPACK_IMPORTED_MODULE_22__);
+/* harmony import */ var _components_upload_session_upload_session_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/upload-session/upload-session.component */ "./src/app/components/upload-session/upload-session.component.ts");
+/* harmony import */ var _services_validate_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./services/validate.service */ "./src/app/services/validate.service.ts");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./services/auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var _services_data_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./services/data.service */ "./src/app/services/data.service.ts");
+/* harmony import */ var _guards_auth_guard__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./guards/auth.guard */ "./src/app/guards/auth.guard.ts");
+/* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ng-flash-messages */ "./node_modules/ng-flash-messages/ng-flash-messages.umd.js");
+/* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(ng_flash_messages__WEBPACK_IMPORTED_MODULE_21__);
+/* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @auth0/angular-jwt */ "./node_modules/@auth0/angular-jwt/index.js");
+/* harmony import */ var ng2_charts__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ng2-charts */ "./node_modules/ng2-charts/index.js");
+/* harmony import */ var ng2_charts__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(ng2_charts__WEBPACK_IMPORTED_MODULE_23__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -410,6 +411,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 // COMPONENTS
+
 
 
 
@@ -437,13 +439,14 @@ var appRoutes = [
     {
         path: "dashboard",
         component: _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_10__["DashboardComponent"],
-        canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_19__["AuthGuard"]]
+        canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_20__["AuthGuard"]]
     },
-    { path: "profile", component: _components_profile_profile_component__WEBPACK_IMPORTED_MODULE_11__["ProfileComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_19__["AuthGuard"]] },
+    { path: "profile", component: _components_profile_profile_component__WEBPACK_IMPORTED_MODULE_11__["ProfileComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_20__["AuthGuard"]] },
     { path: "about", component: _components_about_about_component__WEBPACK_IMPORTED_MODULE_12__["AboutComponent"] },
     { path: "sessions", component: _components_all_sessions_all_sessions_component__WEBPACK_IMPORTED_MODULE_13__["AllSessionsComponent"] },
     { path: "sessions/details/:_id", component: _components_session_details_session_details_component__WEBPACK_IMPORTED_MODULE_15__["SessionDetailsComponent"] },
-    { path: "sessions/edit/:_id", component: _components_edit_session_edit_session_component__WEBPACK_IMPORTED_MODULE_14__["EditSessionComponent"] }
+    { path: "sessions/edit/:_id", component: _components_edit_session_edit_session_component__WEBPACK_IMPORTED_MODULE_14__["EditSessionComponent"] },
+    { path: "sessions/upload", component: _components_upload_session_upload_session_component__WEBPACK_IMPORTED_MODULE_16__["UploadSessionComponent"] }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -461,22 +464,24 @@ var AppModule = /** @class */ (function () {
                 _components_about_about_component__WEBPACK_IMPORTED_MODULE_12__["AboutComponent"],
                 _components_all_sessions_all_sessions_component__WEBPACK_IMPORTED_MODULE_13__["AllSessionsComponent"],
                 _components_edit_session_edit_session_component__WEBPACK_IMPORTED_MODULE_14__["EditSessionComponent"],
-                _components_session_details_session_details_component__WEBPACK_IMPORTED_MODULE_15__["SessionDetailsComponent"]
+                _components_session_details_session_details_component__WEBPACK_IMPORTED_MODULE_15__["SessionDetailsComponent"],
+                _components_upload_session_upload_session_component__WEBPACK_IMPORTED_MODULE_16__["UploadSessionComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"],
                 _angular_http__WEBPACK_IMPORTED_MODULE_3__["HttpModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forRoot(appRoutes),
-                ng_flash_messages__WEBPACK_IMPORTED_MODULE_20__["NgFlashMessagesModule"].forRoot(),
-                _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_21__["JwtModule"].forRoot({
+                ng_flash_messages__WEBPACK_IMPORTED_MODULE_21__["NgFlashMessagesModule"].forRoot(),
+                _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_22__["JwtModule"].forRoot({
                     config: {
                         tokenGetter: tokenGetter
                     }
                 }),
-                ng2_charts__WEBPACK_IMPORTED_MODULE_22__["ChartsModule"]
+                ng2_charts__WEBPACK_IMPORTED_MODULE_23__["ChartsModule"]
             ],
-            providers: [_services_validate_service__WEBPACK_IMPORTED_MODULE_16__["ValidateService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_17__["AuthService"], _services_data_service__WEBPACK_IMPORTED_MODULE_18__["DataService"], _guards_auth_guard__WEBPACK_IMPORTED_MODULE_19__["AuthGuard"]],
+            providers: [_services_validate_service__WEBPACK_IMPORTED_MODULE_17__["ValidateService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_18__["AuthService"], _services_data_service__WEBPACK_IMPORTED_MODULE_19__["DataService"], _guards_auth_guard__WEBPACK_IMPORTED_MODULE_20__["AuthGuard"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
         })
     ], AppModule);
@@ -571,7 +576,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"panel panel-default\">\n  <div class=\"panel-heading\">\n    <h1 class=\"panel-title\"> View Recorded Sessions</h1>\n  </div>\n  <div class=\"panel-body\">\n    <div class=\"row\">\n      <div *ngFor=\"let session of sessions\">\n        <!-- Repeated for Each Session -->\n        <div class=\"col-md-12\">\n\n          <h3>{{session.name}}</h3>\n          <h5>Recorded: {{session.record_date}}</h5>\n          <p>Type: {{session.session_type}}</p>\n          <a class=\"btn btn-primary\" href=\"sessions/details/{{session._id}}\">View Details</a>\n          <!--  TODO NEED TO CHANGE THE href to angular-friendly routing -->\n\n        </div>\n      </div>\n    </div>\n  </div>"
+module.exports = "<div class=\"panel panel-default\">\n  <div class=\"panel-heading\">\n    <h1 class=\"panel-title\"> View Recorded Sessions</h1>\n  </div>\n  <div class=\"panel-body\">\n\n    <div class=\"row\" *ngFor=\"let session of sessions\">\n      <div>\n        <div class=\"col-md-12\">\n          <h3>{{session.name}}</h3>\n        </div>\n        <div class=\"col-md-12\">\n          <h5>Recorded: {{session.record_date}}</h5>\n        </div>\n        <div class=\"col-md-12\">\n          <p>Type: {{session.session_type}}</p>\n        </div>\n        <div class=\"col-md-12\">\n          <a class=\"btn btn-primary\" href=\"sessions/details/{{session._id}}\">View Details</a>\n        </div>\n      </div>\n    </div>\n  </div>"
 
 /***/ }),
 
@@ -646,7 +651,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Dashboard</h2>\n<p>Welcome to your dashboard</p>"
+module.exports = "<h2 class=\"page-header\">Dashboard</h2>\n<p>Welcome to your dashboard</p>\n<a class=\"btn btn-primary btn-lg\" [routerLink]=\"['/sessions/upload']\">Upload a New Recording </a>"
 
 /***/ }),
 
@@ -770,12 +775,7 @@ var EditSessionComponent = /** @class */ (function () {
         var updated_session = {
             name: this.model.name,
             record_date: this.model.record_date,
-            session_type: this.model.session_type,
-            ts: this.model.ts,
-            force_raw: this.model.force_raw,
-            force_adj: this.model.force_adj,
-            angle_raw: this.model.angle_raw,
-            angle_adj: this.model.angle_adj
+            session_type: this.model.session_type
         };
         this.dataService.updateSession(id, updated_session).subscribe(function (res) {
             console.log(res); // Need to do something more meaningful with this later
@@ -1321,7 +1321,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<a class=\"btn btn-info\" href=\"sessions\">Go Back</a>\n<div class=\"panel panel-default\">\n  <div class=\"panel-heading\">\n    <h1 class=\"panel-title\">{{session.name}}</h1>\n  </div>\n  <div class=\"panel-body\">\n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <h3>Date Recorded: {{session.record_date}}</h3>\n        <h5>Type of Recording: {{session.session_type}}</h5>\n        <!-- TODO Try unsng square brackets to stop loading data before it gets here -->\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <div style=\"display: block;\">\n              <canvas baseChart width=\"600\" height=\"400\" [datasets]=\"lineChartData\" [labels]=\"lineChartLabels\" [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\" [legend]=\"lineChartLegend\" [chartType]=\"lineChartType\" (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\">\n              </canvas>\n            </div>\n          </div>\n          <div class=\"col-md-12\" style=\"margin-bottom: 10px\">\n            <button class=\"btn btn-primary\" (click)=\"setChart()\">CLICK TO LOAD DATA</button>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"pull-right\">\n  <a class=\"btn btn-info\" href=\"sessions/edit/{{session._id}}\">Edit Details</a> |\n  <a class=\"btn btn-danger\" href=\"sessions\" ng-click=\"removeSession(session._id)\">Delete Session</a>\n</div>"
+module.exports = "<a class=\"btn btn-info\" href=\"sessions\">Go Back</a>\n<div class=\"panel panel-default\">\n  <div class=\"panel-heading\">\n    <h1 class=\"panel-title\">{{session.name}}</h1>\n  </div>\n  <div class=\"panel-body\">\n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <h3>Date Recorded: {{session.record_date}}</h3>\n        <h5>Type of Recording: {{session.session_type}}</h5>\n        <!-- TODO Try unsng square brackets to stop loading data before it gets here -->\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <div style=\"display: block;\">\n              <canvas baseChart width=\"600\" height=\"400\" [datasets]=\"lineChartData\" [labels]=\"lineChartLabels\" [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\" [legend]=\"lineChartLegend\" [chartType]=\"lineChartType\" (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\">\n              </canvas>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"pull-right\">\n  <a class=\"btn btn-warning\" href=\"sessions/edit/{{session._id}}\">Edit Details</a> |\n  <a class=\"btn btn-danger\" (click)=\"this.deleteSession()\">Delete Session</a>\n</div>"
 
 /***/ }),
 
@@ -1338,14 +1338,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _services_data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/data.service */ "./src/app/services/data.service.ts");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var node_modules_chart_js_src_chart_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! node_modules/chart.js/src/chart.js */ "./node_modules/chart.js/src/chart.js");
-/* harmony import */ var node_modules_chart_js_src_chart_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(node_modules_chart_js_src_chart_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var node_modules_chartjs_plugin_zoom_chartjs_plugin_zoom_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! node_modules/chartjs-plugin-zoom/chartjs-plugin-zoom.js */ "./node_modules/chartjs-plugin-zoom/chartjs-plugin-zoom.js");
-/* harmony import */ var node_modules_chartjs_plugin_zoom_chartjs_plugin_zoom_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(node_modules_chartjs_plugin_zoom_chartjs_plugin_zoom_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var node_modules_hammerjs_hammer_min_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! node_modules/hammerjs/hammer.min.js */ "./node_modules/hammerjs/hammer.min.js");
-/* harmony import */ var node_modules_hammerjs_hammer_min_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(node_modules_hammerjs_hammer_min_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _entity_Session__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../entity/Session */ "./src/app/entity/Session.ts");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var node_modules_chart_js_src_chart_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! node_modules/chart.js/src/chart.js */ "./node_modules/chart.js/src/chart.js");
+/* harmony import */ var node_modules_chart_js_src_chart_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(node_modules_chart_js_src_chart_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var node_modules_chartjs_plugin_zoom_chartjs_plugin_zoom_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! node_modules/chartjs-plugin-zoom/chartjs-plugin-zoom.js */ "./node_modules/chartjs-plugin-zoom/chartjs-plugin-zoom.js");
+/* harmony import */ var node_modules_chartjs_plugin_zoom_chartjs_plugin_zoom_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(node_modules_chartjs_plugin_zoom_chartjs_plugin_zoom_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var node_modules_hammerjs_hammer_min_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! node_modules/hammerjs/hammer.min.js */ "./node_modules/hammerjs/hammer.min.js");
+/* harmony import */ var node_modules_hammerjs_hammer_min_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(node_modules_hammerjs_hammer_min_js__WEBPACK_IMPORTED_MODULE_7__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1359,7 +1360,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var now = moment__WEBPACK_IMPORTED_MODULE_3__().format("LLLL");
+
+var now = moment__WEBPACK_IMPORTED_MODULE_4__().format("LLLL");
 
 
 
@@ -1367,6 +1369,7 @@ var SessionDetailsComponent = /** @class */ (function () {
     function SessionDetailsComponent(dataService, route) {
         this.dataService = dataService;
         this.route = route;
+        this.session = new _entity_Session__WEBPACK_IMPORTED_MODULE_3__["Session"]("", "", "", [], [], [], [], []); // TODO call new Session and actually write a default constructor for it *********************
         this.lineChartLegend = true;
         this.lineChartType = "line";
         this.lineChartData = [
@@ -1494,7 +1497,13 @@ var SessionDetailsComponent = /** @class */ (function () {
         var id = this.route.snapshot.paramMap.get("_id");
         this.dataService.getSessionDetails(id).subscribe(function (data) {
             _this.session = data;
-            console.log(_this.session);
+            _this.setChart();
+        });
+    };
+    SessionDetailsComponent.prototype.deleteSession = function () {
+        var id = this.route.snapshot.paramMap.get("_id");
+        this.dataService.deleteSession(id).subscribe(function (res) {
+            console.log(res);
         });
     };
     SessionDetailsComponent.prototype.setChart = function () {
@@ -1563,6 +1572,132 @@ var SessionDetailsComponent = /** @class */ (function () {
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]])
     ], SessionDetailsComponent);
     return SessionDetailsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/upload-session/upload-session.component.css":
+/*!************************************************************************!*\
+  !*** ./src/app/components/upload-session/upload-session.component.css ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/upload-session/upload-session.component.html":
+/*!*************************************************************************!*\
+  !*** ./src/app/components/upload-session/upload-session.component.html ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n  <h1>Upload a Session</h1>\n  <form [formGroup]=\"form\" (ngSubmit)=\"onSubmit()\">\n    <div class=\"form-group\">\n      <label for=\"name\">Session Name</label>\n      <input type=\"text\" class=\"form-control\" id=\"name\" placeholder=\"Enter A Name:  (Test Session 123)\" formControlName=\"name\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"record_date\">Date Recorded</label>\n      <input type=\"text\" class=\"form-control\" id=\"record_date\" placeholder=\"Enter A Date: (05/15/2018)\" formControlName=\"record_date\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"session_type\">Session Type</label>\n      <select class=\"form-control\" id=\"session_type\" name=\"session_type\" placeholder=\"Enter A Date: (05/15/2018)\" formControlName=\"session_type\">\n        <option *ngFor=\"let opt of session_type_options\" [value]=\"opt\">{{opt}}</option>\n      </select>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"file\">Upload the Recorded File: </label>\n      <input type=\"file\" id=\"file\" (change)=\"onFileChange($event)\" #fileInput>\n      <button type=\"button\" class=\"btn btn-default\" (click)=\"clearFile()\">clear file</button>\n    </div>\n\n    <button type=\"submit\" [disabled]=\"form.invalid || loading\" class=\"btn btn-primary\">Submit\n      <i class=\"fa fa-spinner fa-spin fa-fw\" *ngIf=\"loading\"></i>\n    </button>\n  </form>\n\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/upload-session/upload-session.component.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/components/upload-session/upload-session.component.ts ***!
+  \***********************************************************************/
+/*! exports provided: UploadSessionComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UploadSessionComponent", function() { return UploadSessionComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _services_data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/data.service */ "./src/app/services/data.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var UploadSessionComponent = /** @class */ (function () {
+    function UploadSessionComponent(fb, dataService, route) {
+        this.fb = fb;
+        this.dataService = dataService;
+        this.route = route;
+        this.loading = false;
+        this.submitted = false;
+        this.session_type_options = [
+            "Development/Testing",
+            "Practice",
+            "Race",
+            "Recreation",
+            "Other"
+        ];
+    }
+    UploadSessionComponent.prototype.ngOnInit = function () {
+        this.createForm();
+    };
+    UploadSessionComponent.prototype.createForm = function () {
+        this.form = this.fb.group({
+            name: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            record_date: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            session_type: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            file: null
+        });
+    };
+    UploadSessionComponent.prototype.onFileChange = function (event) {
+        console.log("onFileChange");
+        if (event.target.files.length > 0) {
+            var file = event.target.files[0];
+            this.form.get("file").setValue(file);
+        }
+    };
+    UploadSessionComponent.prototype.prepareSave = function () {
+        var input = new FormData();
+        input.append("name", this.form.get("name").value);
+        input.append("record_date", this.form.get("record_date").value);
+        input.append("session_type", this.form.get("session_type").value);
+        input.append("file", this.form.get("file").value);
+        return input;
+    };
+    UploadSessionComponent.prototype.onSubmit = function () {
+        var _this = this;
+        var formModel = this.prepareSave();
+        this.loading = true;
+        this.dataService.uploadSession(formModel).subscribe(function (res) {
+            console.log(res); // Need to do something more meaningful with this later
+        }, function (err) { return console.error(err); }, function () {
+            console.log("Done Sending File");
+            _this.loading = false;
+        });
+    };
+    UploadSessionComponent.prototype.clearFile = function () {
+        this.form.get("file").setValue(null);
+        this.fileInput.nativeElement.value = "";
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])("fileInput"),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])
+    ], UploadSessionComponent.prototype, "fileInput", void 0);
+    UploadSessionComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "app-upload-session",
+            template: __webpack_require__(/*! ./upload-session.component.html */ "./src/app/components/upload-session/upload-session.component.html"),
+            styles: [__webpack_require__(/*! ./upload-session.component.css */ "./src/app/components/upload-session/upload-session.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"],
+            _services_data_service__WEBPACK_IMPORTED_MODULE_2__["DataService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
+    ], UploadSessionComponent);
+    return UploadSessionComponent;
 }());
 
 
@@ -1671,12 +1806,20 @@ var AuthService = /** @class */ (function () {
     function AuthService(http, jwtHelper) {
         this.http = http;
         this.jwtHelper = jwtHelper;
+        this.production = false;
+        this.baseURL = "";
+        if (this.production) {
+            this.baseURL = "";
+        }
+        else {
+            this.baseURL = "http://localhost:3000";
+        }
     }
     AuthService.prototype.registerUser = function (user) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append("Content-Type", "application/json");
         return this.http
-            .post("/api/users/register", user, {
+            .post(this.baseURL + "/api/users/register", user, {
             headers: headers
         })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
@@ -1685,7 +1828,7 @@ var AuthService = /** @class */ (function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append("Content-Type", "application/json");
         return this.http
-            .post("/api/users/authenticate", user, {
+            .post(this.baseURL + "/api/users/authenticate", user, {
             headers: headers
         })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
@@ -1696,7 +1839,7 @@ var AuthService = /** @class */ (function () {
         headers.append("Content-Type", "application/json");
         headers.append("Authorization", this.authToken);
         return this.http
-            .get("/api/users/profile", {
+            .get(this.baseURL + "/api/users/profile", {
             headers: headers
         })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
@@ -1768,14 +1911,14 @@ var DataService = /** @class */ (function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append("Content-Type", "application/json");
         return this.http
-            .get("/api/sessions/all", { headers: headers })
+            .get("http://localhost:3000/api/sessions/all", { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     DataService.prototype.getSessionDetails = function (_id) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append("Content-Type", "application/json");
         return this.http
-            .get("/api/sessions/details/" + _id, {
+            .get("http://localhost:3000/api/sessions/details/" + _id, {
             headers: headers
         })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
@@ -1784,16 +1927,21 @@ var DataService = /** @class */ (function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append("Content-Type", "application/json");
         return this.http
-            .put("/api/sessions/update/" + _id, session, {
+            .put("http://localhost:3000/api/sessions/update/" + _id, session, {
             headers: headers
         })
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+    };
+    DataService.prototype.uploadSession = function (session) {
+        return this.http
+            .post("http://localhost:3000/api/sessions/upload", session)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     DataService.prototype.deleteSession = function (_id) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append("Content-Type", "application/json");
         return this.http
-            .put("/api/sessions/delete/" + _id, {
+            .delete("http://localhost:3000/api/sessions/delete/" + _id, {
             headers: headers
         })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
