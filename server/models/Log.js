@@ -5,14 +5,7 @@ var Schema = mongoose.Schema,
 
 // Log Schema
 var logsSchema = new Schema({
-  _id: ObjectId,
-  RequestID: String,
-  status: Number,
-  method: String,
-  URL: String,
-  HTTPversion: String,
-  date: String,
-  Referrer: String
+  _id: ObjectId
 });
 
 var Logs = (module.exports = mongoose.model("Logs", logsSchema));

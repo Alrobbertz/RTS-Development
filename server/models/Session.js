@@ -1,4 +1,5 @@
 var mongoose = require("mongoose");
+const path = require("path");
 var PythonShell = require("python-shell");
 
 var Schema = mongoose.Schema,
@@ -45,13 +46,14 @@ module.exports.addSession = (session, callback) => {
 
 // Upload Session
 module.exports.uploadSession = function(session, filename, callback) {
-  var myPythonScriptPath = "./python/script.py";
+  var myPythonScriptPath = path.join(__dirname, "../python");
   var options = {
     mode: "text",
+    scriptPath: myPythonScriptPath,
     args: [session.name, session.session_type, filename]
   };
 
-  PythonShell.run(myPythonScriptPath, options, function(err, results) {
+  PythonShell.run("script.py", options, function(err, results) {
     if (err) throw err;
     // results is an array consisting of messages collected during execution
     console.log("results: %j", results);

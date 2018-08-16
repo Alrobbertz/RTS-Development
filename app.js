@@ -5,6 +5,9 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const passport = require("passport");
 const mongoose = require("mongoose");
+const morgan = require("morgan");
+const logger = require("mongo-morgan-ext");
+const multer = require("multer");
 
 // LOCAL DEPENDENCIES
 const config = require("./server/config/database");
@@ -55,6 +58,24 @@ app.use("/api/logs", logs);
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "public/index.html"));
 });
+
+// Morgan for /logs endpoint
+var db = "mongodb://dev:development1@ds115762.mlab.com:15762/rts-development";
+var collection = "Logs";
+var skipfunction = function(req, res) {
+  return res.statusCode > 399;
+}; //Thiw would skip if HTTP request response is less than 399 i.e no errors.
+app.use(logger(db, collection, skipfunction)); //In your express-application
+
+// Multer for multi-part forms
+app.use(multer({ dest: "./uploads/" }).any("uploads"));
+var storage = multer.diskStorage({
+  destination: "./uploads",
+  filename: (req, file, cb) => {
+    cb(null, file.fieldname + "-TEST");
+  }
+});
+var upload = multer({ storage: storage });
 
 // START SERVER
 if (production) {

@@ -3,6 +3,9 @@ const router = express.Router();
 
 const Session = require("../models/Session");
 
+var multer = require("multer");
+var upload = multer({ dest: "uploads/" });
+
 // Error handling
 const sendError = (err, res) => {
   response.status = 501;
@@ -48,25 +51,35 @@ router.post("/new", function(req, res) {
   });
 });
 
-// // UPLOAD NEW SESSION
-// router.post("/upload", function(req, res) {
-//   if (!req.files) {
-//     console.log("No file received");
-//     return res.send({ success: false });
-//   } else {
-//     console.log("File Received!");
-//     //console.log(req.files[0]);
-//     var session = req.body;
-//     var filename = req.files[0].filename;
-//     Session.uploadSession(session, filename);
-//     return res.send({ success: true });
-//   }
-// });
-
 // UPLOAD NEW SESSION
-router.post("/upload", function(req, res) {
+router.post("/upload-Old", function(req, res) {
+  if (!req.file) {
+    console.log("No file received");
+    return res.send({ success: false, message: "No File Received" });
+  } else {
+    console.log("File Received!");
+    var session = req.body;
+    var filename = req.files[0].filename;
+    Session.uploadSession(session, filename);
+    return res.send({ success: true });
+  }
+});
+
+router.post("/upload", upload.single("file"), function(req, res) {
   console.log(req.body);
-  return res.send({ success: true });
+  console.log(req.file);
+
+  if (!req.file) {
+    console.log("No file received");
+    return res.send({ success: false });
+  } else {
+    console.log("File Received!");
+    //console.log(req.files[0]);
+    var session = req.body;
+    var filename = req.file.filename;
+    Session.uploadSession(session, filename);
+    return res.send({ success: true });
+  }
 });
 
 // Update Session
