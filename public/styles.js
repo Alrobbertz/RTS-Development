@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\n"
+module.exports = "/* You can add global styles to this file, and also import other style files */\nbody#bg-img {\n  background: url('home.jpg');\n  background-attachment: fixed;\n  background-size: cover;\n}\nhtml {\n  position: relative;\n  min-height: 100%;\n}\nbody {\n  margin-bottom: 60px; /* Margin bottom by footer height */\n}\n.footer {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 60px; /* Set the fixed height of the footer here */\n  line-height: 60px; /* Vertically center the text there */\n  background-color: #f5f5f5;\n}\n"
 
 /***/ }),
 

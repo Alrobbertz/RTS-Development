@@ -1,5 +1,5 @@
-.jumbotron-custom {
-  background-image: url("../../../img/bg.png");
+.logo {
+  background: url("../../../img/jumbotron-logo.png") top center no-repeat;
   height: 100vh;
   width: 100%;
   background-repeat: no-repeat;

@@ -310,7 +310,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".main-view {\n  background-color: rgb(118, 118, 118);\n  opacity: 0.6;\n  height: 100%;\n  width: 100%;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: cover;\n}\n\nfooter {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 120px; /* Set the fixed height of the footer here */\n  line-height: 30px; /* Vertically center the text there */\n  background-color: #4a4a4a;\n}\n\nh3 {\n  padding-top: 20px;\n}\n\n.icons {\n  padding: 0.4rem;\n}\n\n.icons a:hover {\n  color: #fff;\n}\n"
 
 /***/ }),
 
@@ -321,7 +321,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar> </app-navbar>\n\n<div class=\"contaner\">\n  <ng-flash-message></ng-flash-message>\n  <div class=\"container\">\n    <router-outlet></router-outlet>\n  </div>\n</div>"
+module.exports = "<app-navbar> </app-navbar>\n\n<div class=\"contaner main-view\">\n  <ng-flash-message></ng-flash-message>\n  <div class=\"container app-view\">\n    <router-outlet></router-outlet>\n  </div>\n\n  <footer>\n    <div class=\"container\">\n      <div class=\"text-center\">\n        <div class=\"icons\">\n          <h3>Find This Project on Githib</h3>\n          <a href=\"https://github.com/Alrobbertz/RTS-Development\">\n            <i class=\"fab fa-github fa-3x\"></i>\n          </a>\n        </div>\n      </div>\n    </div>\n  </footer>\n</div>"
 
 /***/ }),
 
@@ -447,7 +447,7 @@ var appRoutes = [
     { path: "sessions/details/:_id", component: _components_session_details_session_details_component__WEBPACK_IMPORTED_MODULE_15__["SessionDetailsComponent"] },
     { path: "sessions/edit/:_id", component: _components_edit_session_edit_session_component__WEBPACK_IMPORTED_MODULE_14__["EditSessionComponent"] },
     { path: "sessions/upload", component: _components_upload_session_upload_session_component__WEBPACK_IMPORTED_MODULE_16__["UploadSessionComponent"] },
-    { path: "**", redirectTo: "/" }
+    { path: "**", redirectTo: "" }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -822,7 +822,7 @@ var EditSessionComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".jumbotron-custom {\n  background-image: url('bg.jpg');\n  height: 100vh;\n  width: 100%;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: cover;\n}\n"
+module.exports = ".logo {\n  background: url('jumbotron-logo.png') top center no-repeat;\n  height: 100vh;\n  width: 100%;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: cover;\n}\n"
 
 /***/ }),
 
@@ -833,7 +833,7 @@ module.exports = ".jumbotron-custom {\n  background-image: url('bg.jpg');\n  hei
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron jumbotron-custom text-center\">\n  <h1>RTS Development App</h1>\n  <p class=\"lead\">An investigation into the feasibility and practicality of low-cost oarlock instrumentation.</p>\n  <div *ngIf=\"!authService.loggedIn()\">\n    <a class=\"btn btn-info\" [routerLink]=\"['/register']\">Register</a>\n    <a class=\"btn btn-primary\" [routerLink]=\"['/login']\">Login </a>\n  </div>\n  <div *ngIf=\"authService.loggedIn()\">\n    <a class=\"btn btn-primary btn-lg\" [routerLink]=\"['/sessions']\">View Data</a>\n  </div>\n</div>\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-md-4\">\n      <h3>Express Backend</h3>\n      <p>A rock solid Node.js/Express server using Mongoose to organize models and query the database</p>\n    </div>\n    <div class=\"col-md-4\">\n      <h3>Angular-CLI</h3>\n      <p>Angular-CLI to generate components, services and more. Local dev server and easy compilation</p>\n    </div>\n    <div class=\"col-md-4\">\n      <h3>JWT Tokens</h3>\n      <p>Full featured authentication using JSON web tokens. Login and store user data</p>\n    </div>\n  </div>\n</div>"
+module.exports = "<div>\n  <div class=\"jumbotron logo text-center\">\n    <h1>RTS Development App</h1>\n    <h3 class=\"lead\">An investigation into the feasibility and practicality of low-cost oarlock instrumentation.</h3>\n    <div *ngIf=\"!authService.loggedIn()\">\n      <a class=\"btn btn-info\" [routerLink]=\"['/register']\">Register</a>\n      <a class=\"btn btn-primary\" [routerLink]=\"['/login']\">Login </a>\n    </div>\n    <div *ngIf=\"authService.loggedIn()\">\n      <a class=\"btn btn-primary btn-lg\" [routerLink]=\"['/sessions']\">View Data</a>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -1807,7 +1807,7 @@ var AuthService = /** @class */ (function () {
     function AuthService(http, jwtHelper) {
         this.http = http;
         this.jwtHelper = jwtHelper;
-        this.production = true;
+        this.production = false;
         this.baseURL = "";
         if (this.production) {
             this.baseURL = "";
@@ -1907,7 +1907,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
-        this.production = true;
+        this.production = false;
         this.baseURL = "";
         if (this.production) {
             this.baseURL = "";
@@ -2039,6 +2039,8 @@ var ValidateService = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
+/* harmony import */ var zone_js_dist_zone_error__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! zone.js/dist/zone-error */ "./node_modules/zone.js/dist/zone-error.js");
+/* harmony import */ var zone_js_dist_zone_error__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(zone_js_dist_zone_error__WEBPACK_IMPORTED_MODULE_0__);
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build ---prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
@@ -2051,7 +2053,7 @@ var environment = {
  * import the following file, but please comment it out in production mode
  * because it will have performance impact when throw error
  */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+ // Included with Angular CLI.
 
 
 /***/ }),

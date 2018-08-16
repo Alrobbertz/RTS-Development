@@ -1,0 +1,9 @@
+.panel {
+  background: #c2c2c2;
+  padding: 0.5 rem;
+  border: #555555 2px solid;
+}
+
+.options {
+  padding: 1rem;
+}
