@@ -54,11 +54,6 @@ app.use("/api/users", users);
 app.use("/api/sessions", sessions);
 app.use("/api/logs", logs);
 
-// Public Routing
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/index.html"));
-});
-
 // Morgan for /logs endpoint
 var db = "mongodb://dev:development1@ds115762.mlab.com:15762/rts-development";
 var collection = "Logs";
