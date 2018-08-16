@@ -40,35 +40,18 @@ router.get("/details/:_id", function(req, res) {
   });
 });
 
-// Create a new Session
-router.post("/new", function(req, res) {
-  var session = req.body;
-  Session.addSession(session, function(err, session) {
-    if (err) {
-      throw err;
-    }
-    res.json(session);
-  });
-});
-
-// UPLOAD NEW SESSION
-router.post("/upload-Old", function(req, res) {
-  if (!req.file) {
-    console.log("No file received");
-    return res.send({ success: false, message: "No File Received" });
-  } else {
-    console.log("File Received!");
-    var session = req.body;
-    var filename = req.files[0].filename;
-    Session.uploadSession(session, filename);
-    return res.send({ success: true });
-  }
-});
+// // Create a new Session
+// router.post("/new", function(req, res) {
+//   var session = req.body;
+//   Session.addSession(session, function(err, session) {
+//     if (err) {
+//       throw err;
+//     }
+//     res.json(session);
+//   });
+// });
 
 router.post("/upload", upload.single("file"), function(req, res) {
-  console.log(req.body);
-  console.log(req.file);
-
   if (!req.file) {
     console.log("No file received");
     return res.send({ success: false });

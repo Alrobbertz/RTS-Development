@@ -10,7 +10,6 @@ const User = require("../models/User");
 
 // Register
 router.post("/register", (req, res, next) => {
-  console.log(req.body);
   let newUser = new User({
     name: req.body.name,
     email: req.body.email,
@@ -67,7 +66,6 @@ router.get(
   "/profile",
   passport.authenticate("jwt", { session: false }),
   (req, res, next) => {
-    console.log(req.headers);
     res.json({ user: req.user });
   }
 );

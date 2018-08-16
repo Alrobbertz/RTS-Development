@@ -62,7 +62,6 @@ module.exports.uploadSession = function(session, filename, callback) {
 
 // Update Session
 module.exports.updateSession = function(id, session, options, callback) {
-  console.log(session);
   var query = { _id: id };
   var update = {
     name: session.name,

@@ -44,7 +44,8 @@ const appRoutes: Routes = [
   { path: "sessions", component: AllSessionsComponent },
   { path: "sessions/details/:_id", component: SessionDetailsComponent },
   { path: "sessions/edit/:_id", component: EditSessionComponent },
-  { path: "sessions/upload", component: UploadSessionComponent }
+  { path: "sessions/upload", component: UploadSessionComponent },
+  { path: "**", redirectTo: "" }
 ];
 
 @NgModule({

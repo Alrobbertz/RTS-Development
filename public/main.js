@@ -446,7 +446,8 @@ var appRoutes = [
     { path: "sessions", component: _components_all_sessions_all_sessions_component__WEBPACK_IMPORTED_MODULE_13__["AllSessionsComponent"] },
     { path: "sessions/details/:_id", component: _components_session_details_session_details_component__WEBPACK_IMPORTED_MODULE_15__["SessionDetailsComponent"] },
     { path: "sessions/edit/:_id", component: _components_edit_session_edit_session_component__WEBPACK_IMPORTED_MODULE_14__["EditSessionComponent"] },
-    { path: "sessions/upload", component: _components_upload_session_upload_session_component__WEBPACK_IMPORTED_MODULE_16__["UploadSessionComponent"] }
+    { path: "sessions/upload", component: _components_upload_session_upload_session_component__WEBPACK_IMPORTED_MODULE_16__["UploadSessionComponent"] },
+    { path: "**", redirectTo: "/" }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
