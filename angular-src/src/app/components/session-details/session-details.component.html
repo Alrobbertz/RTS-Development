@@ -1,12 +1,14 @@
-<a class="btn btn-info" href="sessions">Go Back</a>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h1 class="panel-title">{{session.name}}</h1>
-  </div>
-  <div class="panel-body">
-    <div class="row">
-      <div class="col-md-12">
-        <h3>Date Recorded: {{session.record_date}}</h3>
+<main id="gen-img">
+  <div class="container">
+
+    <a class="btn btn-primary go-back" [routerLink]="['/sessions']">Go Back</a>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1 class="lg-heading">{{session.name}}</h1>
+      </div>
+      <div class="panel-body">
+        <h3 class="sm-heading">Date Recorded: {{session.record_date}}</h3>
         <h5>Type of Recording: {{session.session_type}}</h5>
         <!-- TODO Try unsng square brackets to stop loading data before it gets here -->
         <div class="row">
@@ -21,10 +23,10 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<div class="pull-right options">
-  <a class="btn btn-warning" href="sessions/edit/{{session._id}}">Edit Details</a> |
-  <a class="btn btn-danger" (click)="this.deleteSession()">Delete Session</a>
-</div>
+    <div class="pull-right options">
+      <a class="btn btn-warning" href="sessions/edit/{{session._id}}">Edit Details</a> |
+      <a class="btn btn-danger" href="sessions" (click)="this.deleteSession()">Delete Session</a>
+    </div>
+  </div>
+</main>

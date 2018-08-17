@@ -1,9 +1,57 @@
+/* General Style */
+
+main {
+  height: 88rem;
+}
+
+main#gen-img {
+  background: url(../../../img/bg/gen.jpg);
+  background-attachment: relative;
+  background-size: cover;
+}
+
+/* COMPONENT */
+
+.go-back {
+  margin-top: 2rem;
+  margin-left: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.container {
+  background: rgba(167, 167, 167, 0.6);
+  height: 100%;
+}
+
 .panel {
-  background: #c2c2c2;
-  padding: 0.5 rem;
-  border: #555555 2px solid;
+  margin: 2 rem;
+  background: #fff;
+}
+
+h1 {
+  margin: 2rem;
+  font-size: 3rem;
+  text-align: left;
+  padding: 1rem 1rem;
+  color: #000;
+}
+
+h5 {
+  margin: 1rem;
+  font-size: 1rem;
+  text-align: cent;
+  padding: 1rem 1rem;
+  color: #000;
+}
+
+.sm-heading {
+  font-size: 2rem;
+  padding: 0.2rem 1rem;
+  margin: 0.5rem;
+  font-weight: bold;
+  background: rgba(167, 167, 167, 0.6);
 }
 
 .options {
-  padding: 1rem;
+  margin-top: 2rem;
 }

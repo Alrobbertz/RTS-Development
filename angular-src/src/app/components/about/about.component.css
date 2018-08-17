@@ -1,3 +1,31 @@
-h4 {
+/* General Style */
+
+main {
+  height: 88rem;
+}
+
+main#about-img {
+  background: url(../../../img/bg/about.jpg);
+  background-attachment: relative;
+  background-size: cover;
+}
+
+/* COMPONENT */
+
+.container {
+  background: rgba(55, 55, 55, 0.5);
+  height: 100%;
+}
+
+.lg-heading {
+  font-size: 4rem;
+  text-align: center;
+  padding: 1rem 1rem;
   color: #fff;
+}
+
+.sm-heading {
+  margin-bottom: 2rem;
+  padding: 0.2rem 1rem;
+  background: rgba(162, 162, 162, 0.5);
 }

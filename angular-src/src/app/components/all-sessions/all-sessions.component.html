@@ -1,23 +1,29 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h1 class="panel-title"> View Recorded Sessions</h1>
-  </div>
-  <div class="panel-body">
+<main id="gen-img">
+  <div class="container">
+    <div class="panel panel-default">
+      <div class="panel-heading lg-heading">
+        <h1 class="panel-title"> View Recorded Sessions</h1>
+      </div>
+      <div class="panel-body">
 
-    <div class="row" *ngFor="let session of sessions">
-      <div>
-        <div class="col-md-12">
-          <h3>{{session.name}}</h3>
+        <div class="row" *ngFor="let session of sessions">
+          <div class="col-md-12 sm-heading">
+            <h3>{{session.name}}</h3>
+          </div>
+          <div class="col-md-12">
+            <h5>Recorded: {{session.record_date}}</h5>
+          </div>
+          <div class="col-md-12">
+            <p>Type: {{session.session_type}}</p>
+          </div>
+          <div class="col-md-12">
+            <a class="btn btn-info" href="sessions/details/{{session._id}}">View Details</a>
+          </div>
+          <hr>
         </div>
-        <div class="col-md-12">
-          <h5>Recorded: {{session.record_date}}</h5>
-        </div>
-        <div class="col-md-12">
-          <p>Type: {{session.session_type}}</p>
-        </div>
-        <div class="col-md-12">
-          <a class="btn btn-primary" href="sessions/details/{{session._id}}">View Details</a>
-        </div>
+        <!-- *ngFor -->
       </div>
     </div>
   </div>
+  <!-- /container -->
+</main>

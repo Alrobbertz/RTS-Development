@@ -1,3 +1,5 @@
+/* General Style */
+
 main {
   height: 88rem;
 }
@@ -7,6 +9,8 @@ main#dash-img {
   background-attachment: relative;
   background-size: cover;
 }
+
+/* COMPONENT */
 
 .container {
   background: rgba(55, 55, 55, 0.5);

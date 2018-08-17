@@ -1,29 +1,37 @@
-<div>
-  <h1>Upload a Session</h1>
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="name">Session Name</label>
-      <input type="text" class="form-control" id="name" placeholder="Enter A Name:  (Test Session 123)" formControlName="name">
-    </div>
-    <div class="form-group">
-      <label for="record_date">Date Recorded</label>
-      <input type="text" class="form-control" id="record_date" placeholder="Enter A Date: (05/15/2018)" formControlName="record_date">
-    </div>
-    <div class="form-group">
-      <label for="session_type">Session Type</label>
-      <select class="form-control" id="session_type" name="session_type" placeholder="Enter A Date: (05/15/2018)" formControlName="session_type">
-        <option *ngFor="let opt of session_type_options" [value]="opt">{{opt}}</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="file">Upload the Recorded File: </label>
-      <input type="file" id="file" (change)="onFileChange($event)" #fileInput>
-      <button type="button" class="btn btn-default" (click)="clearFile()">clear file</button>
-    </div>
+<main id="gen-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a class="btn btn-primary go-back" [routerLink]="['/sessions']">Go Back</a>
 
-    <button type="submit" [disabled]="form.invalid || loading" class="btn btn-primary">Submit
-      <i class="fa fa-spinner fa-spin fa-fw" *ngIf="loading"></i>
-    </button>
-  </form>
+        <h1>Upload a Session</h1>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name">Session Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter A Name:  (Test Session 123)" formControlName="name">
+          </div>
+          <div class="form-group">
+            <label for="record_date">Date Recorded</label>
+            <input type="text" class="form-control" id="record_date" placeholder="Enter A Date: (05/15/2018)" formControlName="record_date">
+          </div>
+          <div class="form-group">
+            <label for="session_type">Session Type</label>
+            <select class="form-control" id="session_type" name="session_type" placeholder="Enter A Date: (05/15/2018)" formControlName="session_type">
+              <option *ngFor="let opt of session_type_options" [value]="opt">{{opt}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="file">Upload the Recorded File: </label>
+            <input type="file" id="file" (change)="onFileChange($event)" #fileInput>
 
-</div>
+          </div>
+          <div class="options">
+            <button type="button" class="btn btn-warning" (click)="clearFile()">clear file</button> |
+            <button type="submit" class="btn btn-info" [disabled]="form.invalid || loading">Submit</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
