@@ -1,8 +1,7 @@
-<div>
-  <div class="jumbotron logo text-center">
+<main id="home-img">
+  <div class="jumbotron text-center">
     <h1 class="display-4">RTS Develoment App</h1>
     <h3 class="lead">An investigation into the feasability and practicailty practicality of low-cost oarlock instrumentation.</h3>
-
     <div *ngIf="!authService.loggedIn()">
       <p class="lead">
         <a class="btn btn-primary btn-lg" [routerLink]="['/login']">Login </a>
@@ -10,8 +9,8 @@
     </div>
     <div *ngIf="authService.loggedIn()">
       <p class="lead">
-        <a class="btn btn-primary btn-xl" [routerLink]="['/sessions']">View Data</a>
+        <a class="btn btn-primary btn-lg" [routerLink]="['/sessions']">View Data</a>
       </p>
     </div>
   </div>
-</div>
+</main>

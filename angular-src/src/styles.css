@@ -5,46 +5,10 @@ html {
 }
 
 body {
-  background: #444;
+  background: #333;
   color: #fff;
   height: 100%;
   margin: 0;
   line-height: 1.5;
-  margin-bottom: 120px; /* Margin bottom by footer height */
-}
-body#bg-img {
-  background: url(../src/img/home.jpg);
-  background-attachment: fixed;
-  background-size: cover;
-}
-body#bg-img:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: rgba(89, 89, 89, 0.5);
-}
-
-main {
-  padding: 1rem;
-  min-height: calc(100vh - 120px);
-}
-main .icons {
-  margin-top: 1rem;
-}
-main .icons a {
-  padding: 0.4rem;
-}
-main .icons a:hover {
-  color: #fff;
-  transition: all 0.5s ease-out;
-}
-main#home {
-  overflow: hidden;
-}
-main#home h1 {
-  margin-top: 20vh;
+  margin-bottom: 8rem; /* Margin bottom by footer height */
 }
