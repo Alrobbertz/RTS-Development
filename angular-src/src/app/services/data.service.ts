@@ -9,7 +9,7 @@ import { Session } from "../entity/Session";
   providedIn: "root"
 })
 export class DataService {
-  production = false;
+  production = true;
   baseURL = "";
 
   constructor(private http: Http) {

@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\nhtml {\n  position: relative;\n  min-height: 100%;\n}\nbody {\n  background: #444;\n  color: #fff;\n  height: 100%;\n  margin: 0;\n  line-height: 1.5;\n  margin-bottom: 60px; /* Margin bottom by footer height */\n}\nbody#bg-img {\n  background: url('home.jpg');\n  background-attachment: fixed;\n  background-size: cover;\n}\nbody#bg-img:after {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 100%;\n  height: 100%;\n  z-index: -1;\n  background: rgba(152, 152, 152, 0.6);\n}\nmain {\n  padding: 4rem;\n  min-height: calc(100vh - 60px);\n}\nmain .icons {\n  margin-top: 1rem;\n}\nmain .icons a {\n  padding: 0.4rem;\n}\nmain .icons a:hover {\n  color: #eece1a;\n  transition: all 0.5s ease-out;\n}\nmain#home {\n  overflow: hidden;\n}\nmain#home h1 {\n  margin-top: 20vh;\n}\n"
+module.exports = "/* You can add global styles to this file, and also import other style files */\nhtml {\n  position: relative;\n  min-height: 100%;\n}\nbody {\n  background: #333;\n  color: #fff;\n  height: 100%;\n  margin: 0;\n  line-height: 1.5;\n  margin-bottom: 8rem; /* Margin bottom by footer height */\n}\n"
 
 /***/ }),
 

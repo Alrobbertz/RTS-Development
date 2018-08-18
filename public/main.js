@@ -310,7 +310,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "footer {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 120px; /* Set the fixed height of the footer here */\n  line-height: 30px; /* Vertically center the text there */\n  background-color: #4a4a4a;\n}\n\nh3 {\n  padding-top: 20px;\n}\n\na .icons {\n  padding: 0.4rem;\n}\n\n.icons a:hover {\n  color: #fff;\n}\n\nmain {\n  padding: 4rem;\n  min-height: calc(100vh - 120px);\n}\n\nmain .icons {\n  margin-top: 1rem;\n}\n\nmain .icons a {\n  padding: 0.4rem;\n}\n\nmain .icons a:hover {\n  color: #eece1a;\n  transition: all 0.5s ease-out;\n}\n\nmain#home {\n  overflow: hidden;\n}\n\nmain#home h1 {\n  margin-top: 20vh;\n}\n"
+module.exports = ".sticky-footer {\n  bottom: 0;\n  position: absolute;\n  width: 100%;\n  height: 8rem; /* Set the fixed height of the footer here */\n  background-color: #5e5e5e;\n}\n\nfooter .icons {\n  margin-top: 1rem;\n}\n\nfoter .icons a {\n  padding: 0.4rem;\n}\n\nfooter .icons a:hover {\n  color: #fff;\n}\n"
 
 /***/ }),
 
@@ -321,7 +321,7 @@ module.exports = "footer {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar> </app-navbar>\n\n<main>\n  <ng-flash-message></ng-flash-message>\n  <div class=\"container app-view\">\n    <router-outlet></router-outlet>\n  </div>\n</main>\n\n\n<footer>\n  <div class=\"container\">\n    <div class=\"text-center\">\n      <div class=\"icons\">\n        <h3>Find This Project on Githib</h3>\n        <a href=\"https://github.com/Alrobbertz/RTS-Development\">\n          <i class=\"fab fa-github fa-3x\"></i>\n        </a>\n      </div>\n    </div>\n  </div>\n</footer>"
+module.exports = "<app-navbar> </app-navbar>\n<ng-flash-message></ng-flash-message>\n<router-outlet></router-outlet>\n\n<footer class=\"sticky-footer\">\n  <div class=\"text-center\">\n    <div class=\"icons\">\n      <h3>Find This Project on Githib</h3>\n      <a href=\"https://github.com/Alrobbertz/RTS-Development\">\n        <i class=\"fab fa-github fa-3x\"></i>\n      </a>\n    </div>\n  </div>\n</footer>"
 
 /***/ }),
 
@@ -503,7 +503,7 @@ function tokenGetter() {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "/* General Style */\n\nmain {\n  height: 88rem;\n}\n\nmain#about-img {\n  background: url('about.jpg');\n  background-attachment: relative;\n  background-size: cover;\n}\n\n/* COMPONENT */\n\n.container {\n  background: rgba(55, 55, 55, 0.5);\n  height: 100%;\n}\n\n.lg-heading {\n  font-size: 4rem;\n  text-align: center;\n  padding: 1rem 1rem;\n  color: #fff;\n}\n\n.sm-heading {\n  margin-bottom: 2rem;\n  padding: 0.2rem 1rem;\n  background: rgba(162, 162, 162, 0.5);\n}\n"
 
 /***/ }),
 
@@ -514,7 +514,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h4>Rowing Telemetry Systems</h4>"
+module.exports = "<main id=\"about-img\">\n    <div class=\"container\">\n        <h1 class=\"lg-heading\">\n            What is RTS?\n        </h1>\n        <h2 class=\"sm-heading\">\n            Nobody knows... not even Cole\n        </h2>\n\n    </div>\n</main>"
 
 /***/ }),
 
@@ -566,7 +566,7 @@ var AboutComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "/* General Style */\n\nmain {\n  height: 88rem;\n}\n\nmain#gen-img {\n  background: url('gen.jpg');\n  background-attachment: relative;\n  background-size: cover;\n}\n\n/* COMPONENT */\n\n.container {\n  background: rgba(45, 45, 45, 0.6);\n  height: 100%;\n}\n\n.lg-heading h1 {\n  font-size: 3rem;\n  text-align: center;\n  padding: 1rem 1rem;\n  color: #fff;\n}\n\n.sm-heading {\n  font-size: 2rem;\n  padding: 0.2rem 1rem;\n  margin: 0.5rem;\n  font-weight: bold;\n}\n\n.row {\n  margin-left: 5rem;\n  margin-right: 5rem;\n  margin-top: 2rem;\n  margin-bottom: 2rem;\n  background: #fff;\n  opacity: 0.9;\n}\n\n.row h5 {\n  padding: 0.2rem 1rem;\n  background: rgba(162, 162, 162, 0.5);\n  font-weight: bold;\n}\n\n.row p {\n  color: #000;\n}\n\n.row a {\n  margin: 0.5rem;\n}\n"
 
 /***/ }),
 
@@ -577,7 +577,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"panel panel-default\">\n  <div class=\"panel-heading\">\n    <h1 class=\"panel-title\"> View Recorded Sessions</h1>\n  </div>\n  <div class=\"panel-body\">\n\n    <div class=\"row\" *ngFor=\"let session of sessions\">\n      <div>\n        <div class=\"col-md-12\">\n          <h3>{{session.name}}</h3>\n        </div>\n        <div class=\"col-md-12\">\n          <h5>Recorded: {{session.record_date}}</h5>\n        </div>\n        <div class=\"col-md-12\">\n          <p>Type: {{session.session_type}}</p>\n        </div>\n        <div class=\"col-md-12\">\n          <a class=\"btn btn-primary\" href=\"sessions/details/{{session._id}}\">View Details</a>\n        </div>\n      </div>\n    </div>\n  </div>"
+module.exports = "<main id=\"gen-img\">\n  <div class=\"container\">\n    <div class=\"panel panel-default\">\n      <div class=\"panel-heading lg-heading\">\n        <h1 class=\"panel-title\"> View Recorded Sessions</h1>\n      </div>\n      <div class=\"panel-body\">\n\n        <div class=\"row\" *ngFor=\"let session of sessions\">\n          <div class=\"col-md-12 sm-heading\">\n            <h3>{{session.name}}</h3>\n          </div>\n          <div class=\"col-md-12\">\n            <h5>Recorded: {{session.record_date}}</h5>\n          </div>\n          <div class=\"col-md-12\">\n            <p>Type: {{session.session_type}}</p>\n          </div>\n          <div class=\"col-md-12\">\n            <a class=\"btn btn-info\" href=\"sessions/details/{{session._id}}\">View Details</a>\n          </div>\n          <hr>\n        </div>\n        <!-- *ngFor -->\n      </div>\n    </div>\n  </div>\n  <!-- /container -->\n</main>"
 
 /***/ }),
 
@@ -641,7 +641,7 @@ var AllSessionsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "/* General Style */\n\nmain {\n  height: 88rem;\n}\n\nmain#dash-img {\n  background: url('dash.jpg');\n  background-attachment: relative;\n  background-size: cover;\n}\n\n/* COMPONENT */\n\n.container {\n  background: rgba(55, 55, 55, 0.5);\n  height: 100%;\n}\n\n.lg-heading {\n  font-size: 4rem;\n  text-align: center;\n  padding: 1rem 1rem;\n  color: #fff;\n}\n\n.sm-heading {\n  margin-bottom: 2rem;\n  padding: 0.2rem 1rem;\n  background: rgba(162, 162, 162, 0.5);\n}\n\n.tiles {\n  display: -ms-grid;\n  display: grid;\n  grid-gap: 0.7rem;\n  -ms-grid-columns: (1fr)[2];\n      grid-template-columns: repeat(2, 1fr);\n}\n\n.btn-light {\n  display: block;\n  padding: 0.5rem 1rem;\n  border: 0;\n  margin-bottom: 0.3rem;\n}\n\n.btn-light:hover {\n  background: #589bed;\n  color: #000;\n}\n\n.btn-light {\n  background: #c4c4c4;\n  color: #333;\n}\n"
 
 /***/ }),
 
@@ -652,7 +652,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Dashboard</h2>\n<p>Welcome to your dashboard</p>\n<a class=\"btn btn-primary btn-lg\" [routerLink]=\"['/sessions/upload']\">Upload a New Recording </a>"
+module.exports = "<main id=\"dash-img\">\n    <div class=\"container\">\n        <h1 class=\"lg-heading\">\n            Welcome to Your\n            <span class=\"text-secondary\">Dashboard</span>\n        </h1>\n        <h2 class=\"sm-heading\">\n            Will be adding more featues soon...\n        </h2>\n\n        <div class=\"tiles\">\n            <div class=\"tile\">\n                <a [routerLink]=\"['/sessions']\" class=\"btn-light tile\">\n                    <h3>View Data</h3>\n                    <i class=\"fas fa-ship fa-4x\"></i>\n                </a>\n            </div>\n\n            <div class=\"tile\">\n                <a [routerLink]=\"['/sessions/upload']\" class=\"btn-light tile\">\n                    <h3>Upload Session</h3>\n                    <i class=\"fas fa-upload fa-4x\"></i>\n                </a>\n            </div>\n\n        </div>\n    </div>\n</main>"
 
 /***/ }),
 
@@ -822,7 +822,7 @@ var EditSessionComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".logo {\n  background: url('jumbotron-logo.png') top center no-repeat;\n  height: 100vh;\n  width: 100%;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: cover;\n}\n"
+module.exports = "main {\n  height: 88rem;\n}\n\nmain#home-img {\n  background: url('home.jpg');\n  background-attachment: relative;\n  background-size: cover;\n  z-index: 1;\n}\n\nmain .jumbotron {\n  background: url('jumbotron-logo.png') top center no-repeat;\n  height: 100%;\n}\n"
 
 /***/ }),
 
@@ -833,7 +833,7 @@ module.exports = ".logo {\n  background: url('jumbotron-logo.png') top center no
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <div class=\"jumbotron logo text-center\">\n    <h1>RTS Development App</h1>\n    <h3 class=\"lead\">An investigation into the feasibility and practicality of low-cost oarlock instrumentation.</h3>\n    <div *ngIf=\"!authService.loggedIn()\">\n      <a class=\"btn btn-info\" [routerLink]=\"['/register']\">Register</a>\n      <a class=\"btn btn-primary\" [routerLink]=\"['/login']\">Login </a>\n    </div>\n    <div *ngIf=\"authService.loggedIn()\">\n      <a class=\"btn btn-primary btn-lg\" [routerLink]=\"['/sessions']\">View Data</a>\n    </div>\n  </div>\n</div>"
+module.exports = "<main id=\"home-img\">\n  <div class=\"jumbotron text-center\">\n    <h1 class=\"display-4\">RTS Develoment App</h1>\n    <h3 class=\"lead\">An investigation into the feasability and practicailty practicality of low-cost oarlock instrumentation.</h3>\n    <div *ngIf=\"!authService.loggedIn()\">\n      <p class=\"lead\">\n        <a class=\"btn btn-primary btn-lg\" [routerLink]=\"['/login']\">Login </a>\n      </p>\n    </div>\n    <div *ngIf=\"authService.loggedIn()\">\n      <p class=\"lead\">\n        <a class=\"btn btn-primary btn-lg\" [routerLink]=\"['/sessions']\">View Data</a>\n      </p>\n    </div>\n  </div>\n</main>"
 
 /***/ }),
 
@@ -1006,7 +1006,7 @@ var LoginComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".navbar {\n  max-height: 4rem;\n}\n"
 
 /***/ }),
 
@@ -1017,7 +1017,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark bg-dark\">\n  <div class=\"navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true }\">\n        <a class=\"nav-link\" [routerLink]=\"['/']\">Home</a>\n      </li>\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true }\">\n        <a class=\"nav-link\" [routerLink]=\"['/about']\">About</a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true }\">\n        <a class=\"nav-link\" [routerLink]=\"['/sessions']\">View Data</a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true }\">\n        <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">Dashboard</a>\n      </li>\n    </ul>\n  </div>\n  <div class=\"mx-auto order-0\">\n    <a class=\"navbar-brand mx-auto\" [routerLink]=\"['/']\">Rowing Telemetry Systems</a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\".dual-collapse2\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n  </div>\n  <div class=\"navbar-collapse collapse w-100 order-3 dual-collapse2\">\n    <ul class=\"navbar-nav ml-auto\">\n      <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true }\">\n        <a class=\"nav-link\" [routerLink]=\"['/login']\">Login</a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\n        <a class=\"nav-link\" [routerLink]=\"['/register']\">Register</a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true }\">\n        <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile</a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\">\n        <a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Logout</a>\n      </li>\n    </ul>\n  </div>\n</nav>"
+module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark bg-dark\">\n  <div class=\"navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true }\">\n        <a class=\"nav-link\" [routerLink]=\"['/']\">Home</a>\n      </li>\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true }\">\n        <a class=\"nav-link\" [routerLink]=\"['/about']\">About</a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true }\">\n        <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">Dashboard</a>\n      </li>\n    </ul>\n  </div>\n  <div class=\"mx-auto order-0\">\n    <a class=\"navbar-brand mx-auto\" [routerLink]=\"['/']\">Rowing Telemetry Systems</a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\".dual-collapse2\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n  </div>\n  <div class=\"navbar-collapse collapse w-100 order-3 dual-collapse2\">\n    <ul class=\"navbar-nav ml-auto\">\n      <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true }\">\n        <a class=\"nav-link\" [routerLink]=\"['/login']\">Login</a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true }\">\n        <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile</a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\">\n        <a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Logout</a>\n      </li>\n    </ul>\n  </div>\n</nav>"
 
 /***/ }),
 
@@ -1095,7 +1095,7 @@ var NavbarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "/* General Style */\n\nmain {\n  height: 88rem;\n}\n\nmain#gen-img {\n  background: url('gen.jpg');\n  background-attachment: relative;\n  background-size: cover;\n}\n\n/* COMPONENT */\n\n.container {\n  background: rgba(45, 45, 45, 0.9);\n  height: 100%;\n}\n\nh1 {\n  font-size: 3rem;\n  text-align: center;\n  padding: 1rem 1rem;\n  color: #000;\n}\n\n.sm-heading {\n  font-size: 2rem;\n  padding: 0.2rem 1rem;\n  margin: 0.5rem;\n  font-weight: bold;\n}\n\n.row {\n  margin-left: 5rem;\n  margin-right: 5rem;\n  margin-top: 2rem;\n  margin-bottom: 2rem;\n  background: #fff;\n  opacity: 0.9;\n}\n\n.list-group {\n  color: #000000;\n}\n"
 
 /***/ }),
 
@@ -1106,7 +1106,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf='user'>\n  <h2 class=\"page-header\">{{user.name}}</h2>\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\n    <li class=\"list-group-item\">Email: {{user.email}}</li>\n  </ul>\n</div>"
+module.exports = "<main id=\"gen-img\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <div *ngIf='user'>\n          <h2 class=\"page-header\">{{user.name}}</h2>\n          <ul class=\"list-group\">\n            <li class=\"list-group-item\">Username: {{user.username}}</li>\n            <li class=\"list-group-item\">Email: {{user.email}}</li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n</main>"
 
 /***/ }),
 
@@ -1311,7 +1311,7 @@ var RegisterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".panel {\n  background: #c2c2c2;\n  padding: 0.5 rem;\n  border: #555555 2px solid;\n}\n\n.options {\n  padding: 1rem;\n}\n"
+module.exports = "/* General Style */\n\nmain {\n  height: 88rem;\n}\n\nmain#gen-img {\n  background: url('gen.jpg');\n  background-attachment: relative;\n  background-size: cover;\n}\n\n/* COMPONENT */\n\n.go-back {\n  margin-top: 2rem;\n  margin-left: 0.5rem;\n  margin-bottom: 2rem;\n}\n\n.container {\n  background: rgba(167, 167, 167, 0.6);\n  height: 100%;\n}\n\n.panel {\n  margin: 2 rem;\n  background: #fff;\n}\n\nh1 {\n  margin: 2rem;\n  font-size: 3rem;\n  text-align: left;\n  padding: 1rem 1rem;\n  color: #000;\n}\n\nh5 {\n  margin: 1rem;\n  font-size: 1rem;\n  text-align: cent;\n  padding: 1rem 1rem;\n  color: #000;\n}\n\n.sm-heading {\n  font-size: 2rem;\n  padding: 0.2rem 1rem;\n  margin: 0.5rem;\n  font-weight: bold;\n  background: rgba(167, 167, 167, 0.6);\n}\n\n.options {\n  margin-top: 2rem;\n}\n"
 
 /***/ }),
 
@@ -1322,7 +1322,7 @@ module.exports = ".panel {\n  background: #c2c2c2;\n  padding: 0.5 rem;\n  borde
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<a class=\"btn btn-info\" href=\"sessions\">Go Back</a>\n<div class=\"panel panel-default\">\n  <div class=\"panel-heading\">\n    <h1 class=\"panel-title\">{{session.name}}</h1>\n  </div>\n  <div class=\"panel-body\">\n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <h3>Date Recorded: {{session.record_date}}</h3>\n        <h5>Type of Recording: {{session.session_type}}</h5>\n        <!-- TODO Try unsng square brackets to stop loading data before it gets here -->\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <div style=\"display: block;\">\n              <canvas baseChart width=\"600\" height=\"400\" [datasets]=\"lineChartData\" [labels]=\"lineChartLabels\" [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\" [legend]=\"lineChartLegend\" [chartType]=\"lineChartType\" (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\">\n              </canvas>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"pull-right options\">\n  <a class=\"btn btn-warning\" href=\"sessions/edit/{{session._id}}\">Edit Details</a> |\n  <a class=\"btn btn-danger\" (click)=\"this.deleteSession()\">Delete Session</a>\n</div>"
+module.exports = "<main id=\"gen-img\">\n  <div class=\"container\">\n\n    <a class=\"btn btn-primary go-back\" [routerLink]=\"['/sessions']\">Go Back</a>\n\n    <div class=\"panel panel-default\">\n      <div class=\"panel-heading\">\n        <h1 class=\"lg-heading\">{{session.name}}</h1>\n      </div>\n      <div class=\"panel-body\">\n        <h3 class=\"sm-heading\">Date Recorded: {{session.record_date}}</h3>\n        <h5>Type of Recording: {{session.session_type}}</h5>\n        <!-- TODO Try unsng square brackets to stop loading data before it gets here -->\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <div style=\"display: block;\">\n              <canvas baseChart width=\"600\" height=\"400\" [datasets]=\"lineChartData\" [labels]=\"lineChartLabels\" [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\" [legend]=\"lineChartLegend\" [chartType]=\"lineChartType\" (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\">\n              </canvas>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"pull-right options\">\n      <a class=\"btn btn-warning\" href=\"sessions/edit/{{session._id}}\">Edit Details</a> |\n      <a class=\"btn btn-danger\" href=\"sessions\" (click)=\"this.deleteSession()\">Delete Session</a>\n    </div>\n  </div>\n</main>"
 
 /***/ }),
 
@@ -1586,7 +1586,7 @@ var SessionDetailsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "/* General Style */\n\nmain {\n  height: 88rem;\n}\n\nmain#gen-img {\n  background: url('gen.jpg');\n  background-attachment: relative;\n  background-size: cover;\n}\n\n/* COMPONENT */\n\n.container {\n  background: rgba(45, 45, 45, 0.9);\n  height: 100%;\n}\n\nh1 {\n  font-size: 3rem;\n  text-align: center;\n  padding: 1rem 1rem;\n  color: #000;\n}\n\n.sm-heading {\n  font-size: 2rem;\n  padding: 0.2rem 1rem;\n  margin: 0.5rem;\n  font-weight: bold;\n}\n\n.row {\n  margin-left: 5rem;\n  margin-right: 5rem;\n  margin-top: 2rem;\n  margin-bottom: 2rem;\n  background: #fff;\n  opacity: 0.9;\n}\n\nlabel {\n  color: #000;\n  font-size: 1.5rem;\n  text-decoration: underline;\n}\n\n.row h5 {\n  padding: 0.2rem 1rem;\n  background: rgba(162, 162, 162, 0.5);\n  font-weight: bold;\n}\n\n.row p {\n  color: #000;\n}\n\n.row a {\n  margin: 2rem;\n}\n\n.row .btn {\n  margin-top: 2rem;\n}\n"
 
 /***/ }),
 
@@ -1597,7 +1597,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <h1>Upload a Session</h1>\n  <form [formGroup]=\"form\" (ngSubmit)=\"onSubmit()\">\n    <div class=\"form-group\">\n      <label for=\"name\">Session Name</label>\n      <input type=\"text\" class=\"form-control\" id=\"name\" placeholder=\"Enter A Name:  (Test Session 123)\" formControlName=\"name\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"record_date\">Date Recorded</label>\n      <input type=\"text\" class=\"form-control\" id=\"record_date\" placeholder=\"Enter A Date: (05/15/2018)\" formControlName=\"record_date\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"session_type\">Session Type</label>\n      <select class=\"form-control\" id=\"session_type\" name=\"session_type\" placeholder=\"Enter A Date: (05/15/2018)\" formControlName=\"session_type\">\n        <option *ngFor=\"let opt of session_type_options\" [value]=\"opt\">{{opt}}</option>\n      </select>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"file\">Upload the Recorded File: </label>\n      <input type=\"file\" id=\"file\" (change)=\"onFileChange($event)\" #fileInput>\n      <button type=\"button\" class=\"btn btn-default\" (click)=\"clearFile()\">clear file</button>\n    </div>\n\n    <button type=\"submit\" [disabled]=\"form.invalid || loading\" class=\"btn btn-primary\">Submit\n      <i class=\"fa fa-spinner fa-spin fa-fw\" *ngIf=\"loading\"></i>\n    </button>\n  </form>\n\n</div>"
+module.exports = "<main id=\"gen-img\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <a class=\"btn btn-primary go-back\" [routerLink]=\"['/sessions']\">Go Back</a>\n\n        <h1>Upload a Session</h1>\n        <form [formGroup]=\"form\" (ngSubmit)=\"onSubmit()\">\n          <div class=\"form-group\">\n            <label for=\"name\">Session Name</label>\n            <input type=\"text\" class=\"form-control\" id=\"name\" placeholder=\"Enter A Name:  (Test Session 123)\" formControlName=\"name\">\n          </div>\n          <div class=\"form-group\">\n            <label for=\"record_date\">Date Recorded</label>\n            <input type=\"text\" class=\"form-control\" id=\"record_date\" placeholder=\"Enter A Date: (05/15/2018)\" formControlName=\"record_date\">\n          </div>\n          <div class=\"form-group\">\n            <label for=\"session_type\">Session Type</label>\n            <select class=\"form-control\" id=\"session_type\" name=\"session_type\" placeholder=\"Enter A Date: (05/15/2018)\" formControlName=\"session_type\">\n              <option *ngFor=\"let opt of session_type_options\" [value]=\"opt\">{{opt}}</option>\n            </select>\n          </div>\n          <div class=\"form-group\">\n            <label for=\"file\">Upload the Recorded File: </label>\n            <input type=\"file\" id=\"file\" (change)=\"onFileChange($event)\" #fileInput>\n\n          </div>\n          <div class=\"options\">\n            <button type=\"button\" class=\"btn btn-warning\" (click)=\"clearFile()\">clear file</button> |\n            <button type=\"submit\" class=\"btn btn-info\" [disabled]=\"form.invalid || loading\">Submit</button>\n          </div>\n\n        </form>\n      </div>\n    </div>\n  </div>\n</main>"
 
 /***/ }),
 
@@ -1629,10 +1629,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var UploadSessionComponent = /** @class */ (function () {
-    function UploadSessionComponent(fb, dataService, route) {
+    function UploadSessionComponent(fb, dataService, route, router) {
         this.fb = fb;
         this.dataService = dataService;
         this.route = route;
+        this.router = router;
         this.loading = false;
         this.submitted = false;
         this.session_type_options = [
@@ -1678,6 +1679,7 @@ var UploadSessionComponent = /** @class */ (function () {
         }, function (err) { return console.error(err); }, function () {
             console.log("Done Sending File");
             _this.loading = false;
+            _this.router.navigateByUrl("/sessions");
         });
     };
     UploadSessionComponent.prototype.clearFile = function () {
@@ -1696,7 +1698,8 @@ var UploadSessionComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"],
             _services_data_service__WEBPACK_IMPORTED_MODULE_2__["DataService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
     ], UploadSessionComponent);
     return UploadSessionComponent;
 }());
