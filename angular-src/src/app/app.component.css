@@ -2,16 +2,29 @@
   bottom: 0;
   position: absolute;
   width: 100%;
-  height: 8rem; /* Set the fixed height of the footer here */
-  background-color: #5e5e5e;
+  height: 5%; /* Set the fixed height of the footer here */
+  color: var(--light);
+  background: var(--dark);
 }
 
-footer .icons {
+.icons {
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
-foter .icons a {
-  padding: 0.4rem;
-}
-footer .icons a:hover {
+
+.icons h3 {
   color: #fff;
+}
+
+.icons a {
+  color: #fff;
+}
+
+.icons a:hover {
+  color: var(--fancy);
+}
+
+.icons h3:hover {
+  text-decoration: none;
+  color: var(--fancy);
 }

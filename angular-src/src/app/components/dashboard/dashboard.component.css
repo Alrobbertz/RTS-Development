@@ -1,7 +1,8 @@
 /* General Style */
 
 main {
-  height: 88rem;
+  height: 90%;
+  bottom: 0;
 }
 
 main#dash-img {
@@ -13,12 +14,31 @@ main#dash-img {
 /* COMPONENT */
 
 .container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "data  data upload";
   background: rgba(55, 55, 55, 0.5);
   height: 100%;
 }
 
+.header {
+  grid-area: header;
+  bottom: 0;
+}
+
+.data {
+  grid-area: data;
+}
+
+.upload {
+  margin-top: 0;
+
+  grid-area: upload;
+}
+
 .lg-heading {
-  font-size: 4rem;
+  font-size: 5rem;
   text-align: center;
   padding: 1rem 1rem;
   color: #fff;
@@ -30,25 +50,6 @@ main#dash-img {
   background: rgba(162, 162, 162, 0.5);
 }
 
-.tiles {
-  display: grid;
-  grid-gap: 0.7rem;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.btn-light {
-  display: block;
-  padding: 0.5rem 1rem;
-  border: 0;
-  margin-bottom: 0.3rem;
-}
-
-.btn-light:hover {
-  background: #589bed;
-  color: #000;
-}
-
-.btn-light {
-  background: #c4c4c4;
-  color: #333;
+.btn {
+  font-size: 3rem;
 }

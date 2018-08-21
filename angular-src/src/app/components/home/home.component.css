@@ -1,5 +1,6 @@
 main {
-  height: 88rem;
+  height: 90%;
+  bottom: 0;
 }
 
 main#home-img {
@@ -11,5 +12,6 @@ main#home-img {
 
 main .jumbotron {
   background: url("../../../img/jumbotron-logo.png") top center no-repeat;
+  background-size: fill;
   height: 100%;
 }

@@ -1,28 +1,28 @@
 <main id="dash-img">
     <div class="container">
-        <h1 class="lg-heading">
-            Welcome to Your
-            <span class="text-secondary">Dashboard</span>
-        </h1>
-        <h2 class="sm-heading">
-            Will be adding more featues soon...
-        </h2>
-
-        <div class="tiles">
-            <div class="tile">
-                <a [routerLink]="['/sessions']" class="btn-light tile">
-                    <h3>View Data</h3>
-                    <i class="fas fa-ship fa-4x"></i>
-                </a>
-            </div>
-
-            <div class="tile">
-                <a [routerLink]="['/sessions/upload']" class="btn-light tile">
-                    <h3>Upload Session</h3>
-                    <i class="fas fa-upload fa-4x"></i>
-                </a>
-            </div>
-
+        <div class="header">
+            <h1 class="lg-heading"> Welcome to Your
+                <span class="text-secondary">Dashboard</span>
+            </h1>
+            <h2 class="sm-heading">
+                Will be adding more featues soon...
+            </h2>
         </div>
+
+        <div class="tile data">
+            <a [routerLink]="['/sessions']" class="btn">
+
+                <i class="fas fa-ship"></i> View Data
+            </a>
+        </div>
+
+        <div class="tile upload">
+            <a [routerLink]="['/sessions/upload']" class="btn">
+
+                <i class="fas fa-upload"></i> Upload Session
+            </a>
+        </div>
+
+
     </div>
 </main>
