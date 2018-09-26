@@ -13,32 +13,8 @@ main#dash-img {
 
 /* COMPONENT */
 
-.container {
-  background: var(--bg-fade);
-  height: 100%;
-}
-
-.header {
-  grid-area: header;
-  bottom: 0;
-  align-self: start;
-}
-
 .tile {
   margin: 3rem 3rem;
-}
-
-.lg-heading {
-  font-size: 5rem;
-  text-align: center;
-  padding: 1rem 1rem;
-  color: #fff;
-}
-
-.sm-heading {
-  margin-bottom: 2rem;
-  padding: 0.2rem 1rem;
-  background: var(--light);
 }
 
 .btn {

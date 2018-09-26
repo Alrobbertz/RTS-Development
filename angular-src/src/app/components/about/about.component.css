@@ -13,31 +13,6 @@ main#about-img {
 
 /* COMPONENT */
 
-.container {
-  background: rgba(45, 45, 45, 0.6);
-  height: 100%;
-}
-
-.lg-heading {
-  font-size: 4rem;
-  text-align: center;
-  padding: 1rem 1rem;
-  color: #fff;
-}
-
-.sm-heading {
-  margin-bottom: 2rem;
-  padding: 0.2rem 1rem;
-  background: rgba(221, 221, 221, 0.9);
-}
-
-.block {
-  margin-bottom: 1rem;
-  padding: 0.1rem 1rem;
-  color: #000;
-  background: rgba(221, 221, 221, 0.9);
-}
-
 .main-text p {
   padding: 0.5rem 1rem;
   font-size: 1.5rem;

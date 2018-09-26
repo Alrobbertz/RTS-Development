@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 :root {
-  --primary-color: #ddd;
+  --primary-color: rgba(226, 226, 226, 0.9);
   --dark: #333;
   --light: #fff;
   --fancy: rgb(7, 129, 228);
@@ -21,11 +21,41 @@ body {
   margin-bottom: 50px;
 }
 
+.container {
+  background: var(--bg-fade);
+  height: 100%;
+}
+
+.block {
+  margin-bottom: 1rem;
+  padding: 0.1rem 1rem;
+  color: #000;
+  background: var(--primary-color);
+}
+
+.lg-heading {
+  font-size: 5rem;
+  text-align: center;
+  padding: 1rem 1rem;
+  color: #fff;
+}
+
+.sm-heading {
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0.2rem 1rem;
+  background: var(--light);
+  box-shadow: var(--shadow);
+}
+
 img {
   max-width: 100%;
 }
 
 .btn {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   padding: 0.5;
   font-size: 1.5rem;
   background: var(--dark);
