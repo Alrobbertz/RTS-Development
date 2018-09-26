@@ -6,7 +6,7 @@ import { map, catchError } from "rxjs/operators";
   providedIn: "root"
 })
 export class DataService {
-  production = false;
+  production = true; // TODO Change the to TRUE for production build
   baseURL = "";
 
   constructor(private http: Http) {
