@@ -822,7 +822,7 @@ var EditSessionComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "main {\n  height: 115rem;\n  bottom: 0;\n}\n\nmain#home-img {\n  background: url('home.jpg');\n  background-attachment: relative;\n  background-size: cover;\n  z-index: 1;\n}\n\nmain .jumbotron {\n  background: url('jumbotron-logo.png') top center no-repeat;\n  background-size: fill;\n  height: 100%;\n}\n\n.btn {\n  font-size: 4rem;\n}\n"
+module.exports = "main {\n  height: 115rem;\n  bottom: 0;\n}\n\nmain#home-img {\n  background: url('home.jpg');\n  background-attachment: relative;\n  background-size: cover;\n  z-index: 1;\n}\n\nmain .jumbotron {\n  background: url('jumbotron-logo.png') top center no-repeat;\n  background-size: fill;\n  height: 100%;\n}\n\n.btn {\n  font-size: 3rem;\n  padding: 0.5rem 1rem;\n}\n"
 
 /***/ }),
 
