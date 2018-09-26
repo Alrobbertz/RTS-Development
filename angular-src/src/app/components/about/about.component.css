@@ -1,7 +1,7 @@
 /* General Style */
 
 main {
-  height: 100%;
+  height: 115rem;
   bottom: 0;
 }
 
@@ -12,6 +12,10 @@ main#about-img {
 }
 
 /* COMPONENT */
+
+.block {
+  background: var(--light);
+}
 
 .main-text p {
   padding: 0.5rem 1rem;
