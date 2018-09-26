@@ -1,9 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Http, Headers } from "@angular/http";
-import { Observable, throwError } from "rxjs";
 import { map, catchError } from "rxjs/operators";
-
-import { Session } from "../entity/Session";
 
 @Injectable({
   providedIn: "root"

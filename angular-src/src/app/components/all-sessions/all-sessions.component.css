@@ -1,0 +1,13 @@
+/* General Style */
+
+main {
+  height: 115rem;
+}
+
+main#gen-img {
+  background: url(../../../img/bg/gen.jpg);
+  background-attachment: relative;
+  background-size: cover;
+}
+
+/* COMPONENT */

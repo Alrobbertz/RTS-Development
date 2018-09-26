@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\nhtml {\n  position: relative;\n  min-height: 100%;\n}\nbody {\n  background: #444;\n  color: #fff;\n  height: 100%;\n  margin: 0;\n  line-height: 1.5;\n  margin-bottom: 60px; /* Margin bottom by footer height */\n}\nbody#bg-img {\n  background: url('home.jpg');\n  background-attachment: fixed;\n  background-size: cover;\n}\nbody#bg-img:after {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 100%;\n  height: 100%;\n  z-index: -1;\n  background: rgba(152, 152, 152, 0.6);\n}\nmain {\n  padding: 4rem;\n  min-height: calc(100vh - 60px);\n}\nmain .icons {\n  margin-top: 1rem;\n}\nmain .icons a {\n  padding: 0.4rem;\n}\nmain .icons a:hover {\n  color: #eece1a;\n  transition: all 0.5s ease-out;\n}\nmain#home {\n  overflow: hidden;\n}\nmain#home h1 {\n  margin-top: 20vh;\n}\n"
+module.exports = "/* You can add global styles to this file, and also import other style files */\n\n:root {\n  --primary-color: #ddd;\n  --dark: #333;\n  --light: #fff;\n  --fancy: rgb(7, 129, 228);\n  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);\n}\n\nhtml {\n  box-sizing: border-box;\n  position: relative;\n  height: 100%;\n  background: var(--dark);\n  color: var(--dark);\n}\n\nbody {\n  color: var(--light);\n  height: 100%;\n  line-height: 1.5;\n}\n\nimg {\n  max-width: 100%;\n}\n\n.btn {\n  padding: 0.5;\n  font-size: 1.5rem;\n  background: var(--dark);\n  color: var(--light);\n  box-shadow: var(--shadow);\n}\n\n.btn:hover {\n  color: var(--fancy);\n  background: #444;\n}\n\n.wrapper {\n  display: -ms-grid;\n  display: grid;\n  grid-gap: 20px;\n}\n"
 
 /***/ }),
 

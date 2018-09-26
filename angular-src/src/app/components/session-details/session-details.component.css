@@ -1,9 +1,21 @@
-.panel {
-  background: #c2c2c2;
-  padding: 0.5 rem;
-  border: #555555 2px solid;
+/* General Style */
+
+main {
+  height: 88rem;
 }
 
-.options {
-  padding: 1rem;
+main#gen-img {
+  background: url(../../../img/bg/gen.jpg);
+  background-attachment: relative;
+  background-size: cover;
+}
+
+/* COMPONENT */
+
+.lg-heading {
+  color: var(--dark);
+}
+
+.block {
+  background: var(--light);
 }

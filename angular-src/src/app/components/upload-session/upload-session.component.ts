@@ -2,7 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 import { DataService } from "../../services/data.service";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 import { Session } from "../../entity/Session";
 
@@ -30,7 +30,8 @@ export class UploadSessionComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private dataService: DataService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -76,6 +77,7 @@ export class UploadSessionComponent implements OnInit {
       () => {
         console.log("Done Sending File");
         this.loading = false;
+        this.router.navigateByUrl("/sessions");
       }
     );
   }

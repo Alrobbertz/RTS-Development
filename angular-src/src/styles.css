@@ -1,50 +1,102 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --primary-color: rgba(226, 226, 226, 0.9);
+  --dark: #333;
+  --light: #fff;
+  --fancy: rgb(7, 129, 228);
+  --bg-fade: rgba(45, 45, 45, 0.6);
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
 html {
   position: relative;
   min-height: 100%;
+  background: var(--dark);
+  color: var(--dark);
 }
 
 body {
-  background: #444;
-  color: #fff;
-  height: 100%;
-  margin: 0;
-  line-height: 1.5;
-  margin-bottom: 120px; /* Margin bottom by footer height */
-}
-body#bg-img {
-  background: url(../src/img/home.jpg);
-  background-attachment: fixed;
-  background-size: cover;
-}
-body#bg-img:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: rgba(89, 89, 89, 0.5);
+  color: var(--light);
+  margin-bottom: 50px;
 }
 
-main {
-  padding: 1rem;
-  min-height: calc(100vh - 120px);
+.container {
+  background: var(--bg-fade);
+  height: 100%;
 }
-main .icons {
-  margin-top: 1rem;
+
+.block {
+  margin-bottom: 1rem;
+  padding: 0.1rem 1rem;
+  color: #000;
+  background: var(--primary-color);
+  box-shadow: var(--shadow);
 }
-main .icons a {
-  padding: 0.4rem;
-}
-main .icons a:hover {
+
+.lg-heading {
+  font-size: 5rem;
+  text-align: center;
+  padding: 1rem 1rem;
   color: #fff;
-  transition: all 0.5s ease-out;
 }
-main#home {
-  overflow: hidden;
+
+.sm-heading {
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0.2rem 1rem;
+  background: var(--light);
+  box-shadow: var(--shadow);
 }
-main#home h1 {
-  margin-top: 20vh;
+
+img {
+  max-width: 100%;
+}
+
+.btn {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5;
+  font-size: 1.5rem;
+  background: var(--dark);
+  color: var(--light);
+  box-shadow: var(--shadow);
+}
+
+.btn:hover {
+  color: var(--fancy);
+  background: var(--light);
+}
+
+.sticky-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px; /* Set the fixed height of the footer here */
+  line-height: 60px; /* Vertically center the text there */
+  color: var(--light);
+  background: var(--dark);
+}
+
+.icons {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.icons h3 {
+  color: #fff;
+}
+
+.icons a {
+  color: #fff;
+}
+
+.icons a:hover {
+  color: var(--fancy);
+}
+
+.icons h3:hover {
+  text-decoration: none;
+  color: var(--fancy);
 }

@@ -1,0 +1,58 @@
+/* General Style */
+
+main {
+  height: 115rem;
+  bottom: 0;
+}
+
+main#about-img {
+  background: url(../../../img/bg/about.jpg);
+  background-attachment: relative;
+  background-size: cover;
+}
+
+/* COMPONENT */
+
+.block {
+  background: var(--light);
+}
+
+.main-text p {
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+}
+
+.main-text ul {
+  font-size: 1.4rem;
+  list-style: none;
+}
+
+.main-text li {
+  padding: 0.5rem 2rem;
+}
+
+.main-images {
+  display: grid;
+  grid-template-areas: "oarlock oarlock-frame";
+}
+
+.oarlock {
+  grid-area: oarlock;
+  align-self: center;
+  box-shadow: var(--shadow);
+  max-width: 100%;
+  margin: 1rem 1rem;
+}
+
+.oarlock-frame {
+  grid-area: oarlock-frame;
+  align-self: center;
+  box-shadow: var(--shadow);
+  max-width: 100%;
+  margin: 1rem 1rem;
+}
+
+.link {
+  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
+}

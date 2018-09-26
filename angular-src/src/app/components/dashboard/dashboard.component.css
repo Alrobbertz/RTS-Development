@@ -1,37 +1,22 @@
-.projects {
-  display: grid;
-  grid-gap: 0.7rem;
-  grid-template-columns: repeat(2, 1fr);
+/* General Style */
+
+main {
+  height: 115rem;
+  bottom: 0;
 }
 
-.btn-light {
-  display: block;
-  padding: 0.5rem 1rem;
-  border: 0;
-  margin-bottom: 0.3rem;
+main#dash-img {
+  background: url(../../../img/bg/dash.jpg);
+  background-attachment: relative;
+  background-size: cover;
 }
 
-.btn-light:hover {
-  background: #589bed;
-  color: #000;
+/* COMPONENT */
+
+.tile {
+  margin: 3rem 3rem;
 }
 
-.btn-light {
-  background: #c4c4c4;
-  color: #333;
-}
-
-.lg-heading {
-  font-size: 4rem;
-}
-
-.sm-heading {
-  margin-bottom: 2rem;
-  padding: 0.2rem 1rem;
-  background: rgba(73, 73, 73, 0.5);
-}
-
-i {
-  padding: 1rem 1rem;
-  display: block;
+.btn {
+  font-size: 3rem;
 }

@@ -1,9 +1,21 @@
-.logo {
-  background: url("../../../img/jumbotron-logo.png") top center no-repeat;
-  height: 100vh;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  -webkit-background-size: cover;
+main {
+  height: 115rem;
+  bottom: 0;
+}
+
+main#home-img {
+  background: url(../../../img/bg/home.jpg);
+  background-attachment: relative;
   background-size: cover;
+  z-index: 1;
+}
+
+main .jumbotron {
+  background: url("../../../img/jumbotron-logo.png") top center no-repeat;
+  background-size: fill;
+  height: 100%;
+}
+
+.btn {
+  font-size: 4rem;
 }
