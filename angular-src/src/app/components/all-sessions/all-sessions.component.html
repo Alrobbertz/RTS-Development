@@ -8,7 +8,11 @@
       <h3 class="sm-heading">{{session.name}}</h3>
       <h5>Recorded: {{session.record_date}}</h5>
       <h5>Type: {{session.session_type}}</h5>
-      <a class="btn btn-info" href="sessions/details/{{session._id}}">View Details</a>
+
+      <div class="pull-right">
+        <a class="btn btn-info" href="sessions/details/{{session._id}}">View Details</a>
+      </div>
+
       <hr>
     </div>
 
