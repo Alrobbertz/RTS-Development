@@ -15,3 +15,7 @@ main .jumbotron {
   background-size: fill;
   height: 100%;
 }
+
+.btn {
+  font-size: 4rem;
+}
