@@ -14,27 +14,18 @@ main#dash-img {
 /* COMPONENT */
 
 .container {
-  display: grid;
-  grid-template-areas:
-    "header header header"
-    "data  data upload";
-  background: rgba(55, 55, 55, 0.5);
+  background: var(--bg-fade);
   height: 100%;
 }
 
 .header {
   grid-area: header;
   bottom: 0;
+  align-self: start;
 }
 
-.data {
-  grid-area: data;
-}
-
-.upload {
-  margin-top: 0;
-
-  grid-area: upload;
+.tile {
+  margin: 3rem 3rem;
 }
 
 .lg-heading {
@@ -47,7 +38,7 @@ main#dash-img {
 .sm-heading {
   margin-bottom: 2rem;
   padding: 0.2rem 1rem;
-  background: rgba(162, 162, 162, 0.5);
+  background: var(--light);
 }
 
 .btn {
