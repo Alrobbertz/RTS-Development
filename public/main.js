@@ -310,7 +310,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".sticky-footer {\n  bottom: 0;\n  position: absolute;\n  width: 100%;\n  height: 8rem; /* Set the fixed height of the footer here */\n  background-color: #5e5e5e;\n}\n\nfooter .icons {\n  margin-top: 1rem;\n}\n\nfoter .icons a {\n  padding: 0.4rem;\n}\n\nfooter .icons a:hover {\n  color: #fff;\n}\n"
+module.exports = ".sticky-footer {\n  bottom: 0;\n  position: absolute;\n  width: 100%;\n  height: 5%; /* Set the fixed height of the footer here */\n  color: var(--light);\n  background: var(--dark);\n}\n\n.icons {\n  margin-top: 1rem;\n  margin-bottom: 1rem;\n}\n\n.icons h3 {\n  color: #fff;\n}\n\n.icons a {\n  color: #fff;\n}\n\n.icons a:hover {\n  color: var(--fancy);\n}\n\n.icons h3:hover {\n  text-decoration: none;\n  color: var(--fancy);\n}\n"
 
 /***/ }),
 
@@ -321,7 +321,7 @@ module.exports = ".sticky-footer {\n  bottom: 0;\n  position: absolute;\n  width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar> </app-navbar>\n<ng-flash-message></ng-flash-message>\n<router-outlet></router-outlet>\n\n<footer class=\"sticky-footer\">\n  <div class=\"text-center\">\n    <div class=\"icons\">\n      <h3>Find This Project on Githib</h3>\n      <a href=\"https://github.com/Alrobbertz/RTS-Development\">\n        <i class=\"fab fa-github fa-3x\"></i>\n      </a>\n    </div>\n  </div>\n</footer>"
+module.exports = "<app-navbar> </app-navbar>\n<ng-flash-message></ng-flash-message>\n<router-outlet></router-outlet>\n\n<footer class=\"sticky-footer\">\n  <div class=\"text-center\">\n    <div class=\"icons\">\n\n      <a href=\"https://github.com/Alrobbertz/RTS-Development\">\n        <h3>Find This Project on Githib</h3>\n        <i class=\"fab fa-github fa-3x\"></i>\n      </a>\n    </div>\n  </div>\n</footer>"
 
 /***/ }),
 
@@ -503,7 +503,7 @@ function tokenGetter() {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* General Style */\n\nmain {\n  height: 88rem;\n}\n\nmain#about-img {\n  background: url('about.jpg');\n  background-attachment: relative;\n  background-size: cover;\n}\n\n/* COMPONENT */\n\n.container {\n  background: rgba(55, 55, 55, 0.5);\n  height: 100%;\n}\n\n.lg-heading {\n  font-size: 4rem;\n  text-align: center;\n  padding: 1rem 1rem;\n  color: #fff;\n}\n\n.sm-heading {\n  margin-bottom: 2rem;\n  padding: 0.2rem 1rem;\n  background: rgba(162, 162, 162, 0.5);\n}\n"
+module.exports = "/* General Style */\n\nmain {\n  height: 90%;\n  bottom: 0;\n}\n\nmain#about-img {\n  background: url('about.jpg');\n  background-attachment: relative;\n  background-size: cover;\n}\n\n/* COMPONENT */\n\n.container {\n  background: rgba(45, 45, 45, 0.6);\n  height: 100%;\n}\n\n.lg-heading {\n  font-size: 4rem;\n  text-align: center;\n  padding: 1rem 1rem;\n  color: #fff;\n}\n\n.sm-heading {\n  margin-bottom: 2rem;\n  padding: 0.2rem 1rem;\n  background: rgba(221, 221, 221, 0.9);\n}\n\n.block {\n  margin-bottom: 1rem;\n  padding: 0.1rem 1rem;\n  color: #000;\n  background: rgba(221, 221, 221, 0.9);\n}\n\n.main-text p {\n  padding: 0.5rem 1rem;\n  font-size: 1.5rem;\n}\n\n.main-text ul {\n  font-size: 1.4rem;\n  list-style: none;\n}\n\n.main-text li {\n  padding: 0.5rem 2rem;\n}\n\n.main-images {\n      grid-template-areas: \"oarlock oarlock-frame\";\n}\n\n.oarlock {\n  -ms-grid-row: 1;\n  -ms-grid-column: 1;\n  grid-area: oarlock;\n}\n\n.oarlock-frame {\n  -ms-grid-row: 1;\n  -ms-grid-column: 2;\n  grid-area: oarlock-frame;\n}\n\n.link {\n  font-size: 1.3rem;\n  padding: 0.5rem 1rem;\n}\n"
 
 /***/ }),
 
@@ -514,7 +514,7 @@ module.exports = "/* General Style */\n\nmain {\n  height: 88rem;\n}\n\nmain#abo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<main id=\"about-img\">\n    <div class=\"container\">\n        <h1 class=\"lg-heading\">\n            What is RTS?\n        </h1>\n        <h2 class=\"sm-heading\">\n            Nobody knows... not even Cole\n        </h2>\n\n    </div>\n</main>"
+module.exports = "<main id=\"about-img\">\n    <div class=\"container\">\n        <h1 class=\"lg-heading\">\n            About Rowing Telemetry Systems\n        </h1>\n        <h2 class=\"sm-heading\">\n            A brief description...\n        </h2>\n\n        <div class=\"block\">\n            <div class=\"main-text\">\n                <p>\n                    Rowing Telemetry Systems (RTS) is an investigation into the possibility of producing low-cost\n                    instrumented\n                    oarlocks for competitive racing shells. Affordable instrumented oarlocks, accessible to High School\n                    and\n                    College level clubs would provide a significant competitive advantage. The RTS team strives to meet\n                    the\n                    following goals,\n                </p>\n                <ul>\n                    <li>\n                        Oarlocks must sell for significantly less than any competition, the team is motivated produce\n                        an oarlock that can be retailed for a tenth of the average competition price.\n                    </li>\n                    <li>\n                        Create a new force measuring architecture to mechanically isolate forces perpendicular to the\n                        oar shaft, providing significantly more precise force values.\n                    </li>\n                    <li>\n                        Integrate an angle sensor accurate to a quarter of a degree, capable of handling 5+ million\n                        cycles.\n\n                    </li>\n                    <li>\n                        Provide novel metrics, giving coaches and rowers tangible value to gauge progress.\n                    </li>\n                    <li>\n                        Create an oarlock that will be significantly easier to install and operate; reducing\n                        installation time to under 1 minute by eliminating the need to calibrate.\n                    </li>\n                    <li>\n                        Considerably more visually pleasing than any instrumented oarlock on the market, creating a\n                        product that looks to be designed for instrumentation in mind.\n                    </li>\n                </ul>\n            </div>\n        </div>\n\n        <div class=\"block\">\n            <div class=\"main-images\">\n                <div class=\"oarlock\">\n                    <img src=\"../../../img/about/oarlock.png\" alt=\"Oarlock\">\n                </div>\n                <div class=\"oarlock-frame\">\n                    <img src=\"../../../img/about/oarlock-frame.png\" alt=\"Oarlock-Frame\">\n                </div>\n            </div>\n        </div>\n\n        <div class=\"block\">\n            <div class=\"main-text\">\n                <p>\n                    The purpose of this website is to facilitate the widespread testing of prototype oarlocks by\n                    providing a platform for rudimentary stroke analysis and data collection. All data collected\n                    through this website will be evaluated with the goal of continually improving hardware, firmware\n                    and software.\n                </p>\n\n                <p>\n                    For further information contact: <b>info@rowingts.com</b>\n                </p>\n                <p>\n                    For bugs or errors found while navigating the site contact: <b>webdev@rowingts.com</b>\n\n                </p>\n\n            </div>\n        </div>\n\n\n    </div>\n</main>"
 
 /***/ }),
 
@@ -641,7 +641,7 @@ var AllSessionsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* General Style */\n\nmain {\n  height: 88rem;\n}\n\nmain#dash-img {\n  background: url('dash.jpg');\n  background-attachment: relative;\n  background-size: cover;\n}\n\n/* COMPONENT */\n\n.container {\n  background: rgba(55, 55, 55, 0.5);\n  height: 100%;\n}\n\n.lg-heading {\n  font-size: 4rem;\n  text-align: center;\n  padding: 1rem 1rem;\n  color: #fff;\n}\n\n.sm-heading {\n  margin-bottom: 2rem;\n  padding: 0.2rem 1rem;\n  background: rgba(162, 162, 162, 0.5);\n}\n\n.tiles {\n  display: -ms-grid;\n  display: grid;\n  grid-gap: 0.7rem;\n  -ms-grid-columns: (1fr)[2];\n      grid-template-columns: repeat(2, 1fr);\n}\n\n.btn-light {\n  display: block;\n  padding: 0.5rem 1rem;\n  border: 0;\n  margin-bottom: 0.3rem;\n}\n\n.btn-light:hover {\n  background: #589bed;\n  color: #000;\n}\n\n.btn-light {\n  background: #c4c4c4;\n  color: #333;\n}\n"
+module.exports = "/* General Style */\n\nmain {\n  height: 90%;\n  bottom: 0;\n}\n\nmain#dash-img {\n  background: url('dash.jpg');\n  background-attachment: relative;\n  background-size: cover;\n}\n\n/* COMPONENT */\n\n.container {\n  display: -ms-grid;\n  display: grid;\n      grid-template-areas:\n    \"header header header\"\n    \"data  data upload\";\n  background: rgba(55, 55, 55, 0.5);\n  height: 100%;\n}\n\n.header {\n  -ms-grid-row: 1;\n  -ms-grid-column: 1;\n  -ms-grid-column-span: 3;\n  grid-area: header;\n  bottom: 0;\n}\n\n.data {\n  -ms-grid-row: 2;\n  -ms-grid-column: 1;\n  -ms-grid-column-span: 2;\n  grid-area: data;\n}\n\n.upload {\n  margin-top: 0;\n\n  -ms-grid-row: 2;\n\n  -ms-grid-column: 3;\n\n  grid-area: upload;\n}\n\n.lg-heading {\n  font-size: 5rem;\n  text-align: center;\n  padding: 1rem 1rem;\n  color: #fff;\n}\n\n.sm-heading {\n  margin-bottom: 2rem;\n  padding: 0.2rem 1rem;\n  background: rgba(162, 162, 162, 0.5);\n}\n\n.btn {\n  font-size: 3rem;\n}\n"
 
 /***/ }),
 
@@ -652,7 +652,7 @@ module.exports = "/* General Style */\n\nmain {\n  height: 88rem;\n}\n\nmain#das
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<main id=\"dash-img\">\n    <div class=\"container\">\n        <h1 class=\"lg-heading\">\n            Welcome to Your\n            <span class=\"text-secondary\">Dashboard</span>\n        </h1>\n        <h2 class=\"sm-heading\">\n            Will be adding more featues soon...\n        </h2>\n\n        <div class=\"tiles\">\n            <div class=\"tile\">\n                <a [routerLink]=\"['/sessions']\" class=\"btn-light tile\">\n                    <h3>View Data</h3>\n                    <i class=\"fas fa-ship fa-4x\"></i>\n                </a>\n            </div>\n\n            <div class=\"tile\">\n                <a [routerLink]=\"['/sessions/upload']\" class=\"btn-light tile\">\n                    <h3>Upload Session</h3>\n                    <i class=\"fas fa-upload fa-4x\"></i>\n                </a>\n            </div>\n\n        </div>\n    </div>\n</main>"
+module.exports = "<main id=\"dash-img\">\n    <div class=\"container\">\n        <div class=\"header\">\n            <h1 class=\"lg-heading\"> Welcome to Your\n                <span class=\"text-secondary\">Dashboard</span>\n            </h1>\n            <h2 class=\"sm-heading\">\n                Will be adding more featues soon...\n            </h2>\n        </div>\n\n        <div class=\"tile data\">\n            <a [routerLink]=\"['/sessions']\" class=\"btn\">\n\n                <i class=\"fas fa-ship\"></i> View Data\n            </a>\n        </div>\n\n        <div class=\"tile upload\">\n            <a [routerLink]=\"['/sessions/upload']\" class=\"btn\">\n\n                <i class=\"fas fa-upload\"></i> Upload Session\n            </a>\n        </div>\n\n\n    </div>\n</main>"
 
 /***/ }),
 
@@ -822,7 +822,7 @@ var EditSessionComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "main {\n  height: 88rem;\n}\n\nmain#home-img {\n  background: url('home.jpg');\n  background-attachment: relative;\n  background-size: cover;\n  z-index: 1;\n}\n\nmain .jumbotron {\n  background: url('jumbotron-logo.png') top center no-repeat;\n  height: 100%;\n}\n"
+module.exports = "main {\n  height: 90%;\n  bottom: 0;\n}\n\nmain#home-img {\n  background: url('home.jpg');\n  background-attachment: relative;\n  background-size: cover;\n  z-index: 1;\n}\n\nmain .jumbotron {\n  background: url('jumbotron-logo.png') top center no-repeat;\n  background-size: fill;\n  height: 100%;\n}\n"
 
 /***/ }),
 
@@ -833,7 +833,7 @@ module.exports = "main {\n  height: 88rem;\n}\n\nmain#home-img {\n  background: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<main id=\"home-img\">\n  <div class=\"jumbotron text-center\">\n    <h1 class=\"display-4\">RTS Develoment App</h1>\n    <h3 class=\"lead\">An investigation into the feasability and practicailty practicality of low-cost oarlock instrumentation.</h3>\n    <div *ngIf=\"!authService.loggedIn()\">\n      <p class=\"lead\">\n        <a class=\"btn btn-primary btn-lg\" [routerLink]=\"['/login']\">Login </a>\n      </p>\n    </div>\n    <div *ngIf=\"authService.loggedIn()\">\n      <p class=\"lead\">\n        <a class=\"btn btn-primary btn-lg\" [routerLink]=\"['/sessions']\">View Data</a>\n      </p>\n    </div>\n  </div>\n</main>"
+module.exports = "<main id=\"home-img\">\n  <div class=\"jumbotron text-center\">\n    <h1 class=\"display-4\">RTS Develoment App</h1>\n    <h3 class=\"lead\">An investigation into the feasability and practicality of low-cost oarlock instrumentation.</h3>\n    <div *ngIf=\"!authService.loggedIn()\">\n      <p class=\"lead\">\n        <a class=\"btn btn-primary btn-lg\" [routerLink]=\"['/login']\">Login </a>\n      </p>\n    </div>\n    <div *ngIf=\"authService.loggedIn()\">\n      <p class=\"lead\">\n        <a class=\"btn btn-primary btn-lg\" [routerLink]=\"['/sessions']\">View Data</a>\n      </p>\n    </div>\n  </div>\n</main>"
 
 /***/ }),
 
@@ -1006,7 +1006,7 @@ var LoginComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".navbar {\n  max-height: 4rem;\n}\n"
+module.exports = ".navbar {\n  height: 5%;\n  background: var(--dark);\n  color: var(--light);\n}\n"
 
 /***/ }),
 
@@ -1017,7 +1017,7 @@ module.exports = ".navbar {\n  max-height: 4rem;\n}\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark bg-dark\">\n  <div class=\"navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true }\">\n        <a class=\"nav-link\" [routerLink]=\"['/']\">Home</a>\n      </li>\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true }\">\n        <a class=\"nav-link\" [routerLink]=\"['/about']\">About</a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true }\">\n        <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">Dashboard</a>\n      </li>\n    </ul>\n  </div>\n  <div class=\"mx-auto order-0\">\n    <a class=\"navbar-brand mx-auto\" [routerLink]=\"['/']\">Rowing Telemetry Systems</a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\".dual-collapse2\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n  </div>\n  <div class=\"navbar-collapse collapse w-100 order-3 dual-collapse2\">\n    <ul class=\"navbar-nav ml-auto\">\n      <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true }\">\n        <a class=\"nav-link\" [routerLink]=\"['/login']\">Login</a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true }\">\n        <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile</a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\">\n        <a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Logout</a>\n      </li>\n    </ul>\n  </div>\n</nav>"
+module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark\">\n  <div class=\"navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true }\">\n        <a class=\"nav-link\" [routerLink]=\"['/']\">Home</a>\n      </li>\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true }\">\n        <a class=\"nav-link\" [routerLink]=\"['/about']\">About</a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true }\">\n        <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">Dashboard</a>\n      </li>\n    </ul>\n  </div>\n  <div class=\"mx-auto order-0\">\n    <a class=\"navbar-brand mx-auto\" [routerLink]=\"['/']\">Rowing Telemetry Systems</a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\".dual-collapse2\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n  </div>\n  <div class=\"navbar-collapse collapse w-100 order-3 dual-collapse2\">\n    <ul class=\"navbar-nav ml-auto\">\n      <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true }\">\n        <a class=\"nav-link\" [routerLink]=\"['/login']\">Login</a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true }\">\n        <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile</a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\">\n        <a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Logout</a>\n      </li>\n    </ul>\n  </div>\n</nav>"
 
 /***/ }),
 
@@ -1810,7 +1810,7 @@ var AuthService = /** @class */ (function () {
     function AuthService(http, jwtHelper) {
         this.http = http;
         this.jwtHelper = jwtHelper;
-        this.production = true;
+        this.production = false;
         this.baseURL = "";
         if (this.production) {
             this.baseURL = "";
@@ -1910,7 +1910,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
-        this.production = true;
+        this.production = false;
         this.baseURL = "";
         if (this.production) {
             this.baseURL = "";
