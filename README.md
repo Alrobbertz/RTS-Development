@@ -21,11 +21,11 @@ npm install
 
 4. Make Sure the App is in 'DEV' mode
 
-a. change 'const PRODUCTION' to false in /app.js
+    a. change 'const PRODUCTION' to false in /app.js
 
-b. change 'production' to false in /angular-src/src/services/data.service.ts
+    b. change 'production' to false in /angular-src/src/services/data.service.ts
 
-c. change 'production' to false in /angular-src/src/services/auth.service.ts
+    c. change 'production' to false in /angular-src/src/services/auth.service.ts
 
 
 5. Run The Application
