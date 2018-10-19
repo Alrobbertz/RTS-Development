@@ -14,7 +14,7 @@ export class AuthService {
   authToken: any;
   user: any;
 
-  production = true; // TODO Change the to TRUE for production build
+  production = false; // TODO Change the to TRUE for production build
   baseURL = "";
 
   constructor(private http: Http, public jwtHelper: JwtHelperService) {
