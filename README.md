@@ -3,7 +3,7 @@
 ### Version
 0.0.0
 
-## TO DEVELOP NEW FEATURES
+## To Develop New Features
 
 1. Clone the repo && cd into it. 
 
@@ -17,4 +17,17 @@ npm install
 ```bash
 cd angular-src/
 npm install
+```
+
+4. Make Sure the App is in 'DEV' mode
+
+    a. change 'const PRODUCTION' to false in /app.js
+    b. change 'production' to false in /angular-src/src/services/data.service.ts
+    c. change 'production' to false in /angular-src/src/services/auth.service.ts
+
+
+5. Run The Application
+
+```bash
+npm run dev
 ```
