@@ -8,15 +8,17 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const logger = require("mongo-morgan-ext");
 const multer = require("multer");
+const oracledb = require('oracledb');
 
 // LOCAL DEPENDENCIES
-const config = require("./server/config/database");
+const dbConfig = require("./server/config/database");
 const users = require("./server/routes/users");
 const sessions = require("./server/routes/sessions");
 const logs = require("./server/routes/logs");
+const database = require("./server/services/database")
 
 var app = express();
-const production = true; // TODO CHANGE TO TRUE FOR PRODUCTION
+const production = false; // TODO CHANGE TO TRUE FOR PRODUCTION
 var prod_port = process.env.PORT || 8080; // Port for Production Builds
 var dev_port = 3000; // Port for Development
 
@@ -37,11 +39,11 @@ require("./server/config/passport")(passport);
 
 // CONNECT TO MONGOOSE
 mongoose.connect(
-  config.database,
+  dbConfig.database,
   { useNewUrlParser: true }
 );
 mongoose.connection.on("connected", () => {
-  console.log("Connected to Database: " + config.database);
+  console.log("Connected to Database: " + dbConfig.database);
 });
 
 // MONGOOSE ERROR HANDLING/ SHOWING
@@ -60,9 +62,11 @@ app.get("*", (req, res) => {
 });
 
 // Morgan for /logs endpoint
+// Combines Logging info from request and response. 
+app.use(morgan('combined'));
 var db = "mongodb://dev:development1@ds115762.mlab.com:15762/rts-development";
 var collection = "Logs";
-var skipfunction = function(req, res) {
+var skipfunction = function (req, res) {
   return res.statusCode > 399;
 }; //Thiw would skip if HTTP request response is less than 399 i.e no errors.
 app.use(logger(db, collection, skipfunction)); //In your express-application
@@ -77,13 +81,34 @@ var storage = multer.diskStorage({
 });
 var upload = multer({ storage: storage });
 
-// START SERVER
-if (production) {
-  app.listen(prod_port, () => {
-    console.log("Productuin Build Running on Port: " + prod_port);
-  });
-} else {
-  app.listen(dev_port, () => {
-    console.log("Development Build Running on Port: " + dev_port);
-  });
+// Start the Server
+start()
+
+async function start() {
+  // Connect to Oracle RDS
+  try {
+    console.log('Initializing database module');
+
+    await database.initialize();
+  } catch (err) {
+    console.error(err);
+
+    process.exit(1); // Non-zero failure code
+  }
+
+  // *** existing try block in startup here ***
+
+  // START SERVER
+  if (production) {
+    app.listen(prod_port, () => {
+      console.log("Productuin Build Running on Port: " + prod_port);
+    });
+  } else {
+    app.listen(dev_port, () => {
+      console.log("Development Build Running on Port: " + dev_port);
+    });
+  }
 }
+
+
+
