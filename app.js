@@ -11,7 +11,7 @@ const multer = require("multer");
 const oracledb = require('oracledb');
 
 // LOCAL DEPENDENCIES
-const dbConfig = require("./server/config/database");
+const dbConfig = require("./server/config/databaseConfig");
 const users = require("./server/routes/users");
 const sessions = require("./server/routes/sessions");
 const logs = require("./server/routes/logs");
