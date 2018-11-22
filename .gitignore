@@ -42,4 +42,4 @@ Thumbs.db
 uploads
 
 # Database Credentials
-/server/config/database.js
+server/config
