@@ -40,3 +40,6 @@ Thumbs.db
 
 # Application Uploads
 uploads
+
+# Database Credentials
+/server/config/database.js
