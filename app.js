@@ -85,16 +85,16 @@ var upload = multer({ storage: storage });
 start()
 
 async function start() {
-  // Connect to Oracle RDS
-  try {
-    console.log('Initializing database module');
+  // // Connect to Oracle RDS
+  // try {
+  //   console.log('Initializing database module');
 
-    await database.initialize();
-  } catch (err) {
-    console.error(err);
+  //   await database.initialize();
+  // } catch (err) {
+  //   console.error(err);
 
-    process.exit(1); // Non-zero failure code
-  }
+  //   process.exit(1); // Non-zero failure code
+  // }
 
   // *** existing try block in startup here ***
 
@@ -110,5 +110,26 @@ async function start() {
   }
 }
 
+async function getEmployee(empId) {
+  let conn;
+
+  try {
+    conn = await oracledb.getConnection(config);
+
+    const result = await conn.execute(
+      'select * from employees where employee_id = :id',
+      [empId]
+    );
+
+    console.log(result.rows[0]);
+  } catch (err) {
+    console.log('Ouch!', err);
+  } finally {
+    if (conn) { // conn assignment worked, need to close
+      console.log("We Still Have an Oracle Connection!!")
+      await conn.close();
+    }
+  }
+}
 
 

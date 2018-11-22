@@ -9,5 +9,10 @@ module.exports = {
     poolMin: 10,
     poolMax: 10,
     poolIncrement: 0
+  },
+  oracleConfig: {
+    user: "admin",
+    password: "iTkAeZa10#",
+    connectString: "rts-development.chjxijh9djsu.us-east-2.rds.amazonaws.com:1521/rtsdev"
   }
 };
