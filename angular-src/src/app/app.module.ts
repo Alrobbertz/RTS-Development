@@ -18,6 +18,8 @@ import { AllSessionsComponent } from "./components/all-sessions/all-sessions.com
 import { EditSessionComponent } from "./components/edit-session/edit-session.component";
 import { SessionDetailsComponent } from "./components/session-details/session-details.component";
 import { UploadSessionComponent } from "./components/upload-session/upload-session.component";
+import { FooterComponent } from './components/footer/footer.component';
+
 
 // SERVICES
 import { ValidateService } from "./services/validate.service";
@@ -61,7 +63,8 @@ const appRoutes: Routes = [
     AllSessionsComponent,
     EditSessionComponent,
     SessionDetailsComponent,
-    UploadSessionComponent
+    UploadSessionComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
